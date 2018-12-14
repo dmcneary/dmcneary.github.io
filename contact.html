@@ -10,60 +10,46 @@
         <link rel="stylesheet" type="text/css" href="assets/css/contact.css">
     </head>
     <body>
-        <header id="top">
-            <div class="container">
-                <a href="index.html" id="logo">David McNeary</a>
-            </div>
-            <nav id="nav">
-                <ul class="nav nav-pills flex-column flex-sm-row justify-content-end">
-                    <li class="nav-item">
-                        <a class="flex-sm-fill text-sm-center nav-link" href="index.html">About</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="#"><h1>David McNeary</h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">About <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="flex-sm-fill text-sm-center nav-link" href="portfolio.html">Portfolio</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="flex-sm-fill text-sm-center nav-link active" href="contact.html">Contact</a>
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
                     </li>
                 </ul>
-            </nav>
-            <!--<nav id="nav">
-                <a href="index.html">About</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
-            </nav>-->
+            </div>
+        </nav>
         </header>
-        <div id="main-container" class="container">
-            <section class="main-section">
-                <h1>Contact Me</h1>
-                <!--<hr>-->
-                <form id="contact-form">
-                    <ul>
-                        <li>
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="your name" required="required">
-                        </li>
-                        <li>
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="youremail@example.com" required="required">
-                        </li>
-                        <li>
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required="required"></textarea>
-                        </li>
-                    </ul>
-                    <input type="submit">
-                </form>
-            </section>
+        <div class="container">
+            
         </div>
-        <footer>
-            <div class="container">
-                &copy;David McNeary<br />
-                <!--get icons for this section and figure out overflow
-                <img src="assets/images/icon.png" id="footer-icon">-->
+        <footer class="row align-start-top fixed-bottom">
+            <!--footer-->
+            <div class="col">&copy; David McNeary 2018</div>
+            <div class="col">
+                <span>
+                    <a href="https://www.linkedin.com/in/davidmcneary/"><img src="assets/images/icons/linked.png" alt="LinkedIn profile badge" class="link-badge"></a>
+                    <a href="https://github.com/dmcneary/"><img src="assets/images/icons/github.png" alt="GitHub profile badge" class="link-badge"></a>
+                    <a href="https://www.instagram.com/david.mcneary/"><img src="assets/images/icons/ig.png" alt="Instagram profile badge" class="link-badge"></a>
+                    <a href="https://www.strava.com/athletes/144397"><img src="assets/images/icons/strava.png" alt="Strava profile badge" class="link-badge"></a>
+                </span>
             </div>
         </footer>
-            </div>
-        </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+                        
     </body>
 </html>
