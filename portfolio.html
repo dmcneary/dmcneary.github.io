@@ -4,71 +4,98 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>portfolio - david mcneary</title>
-        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/portfolio.css">
     </head>
     <body>
-        <header id="top">
-            <div class="container">
-                <a href="index.html" id="logo">David McNeary</a>
-            </div>
-            <nav id="nav">
-                <ul class="nav nav-pills flex-column flex-sm-row justify-content-end">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="index.html"><h1>David McNeary</h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="flex-sm-fill text-sm-center nav-link" href="index.html">About</a>
+                        <a class="nav-link" href="index.html">About <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="flex-sm-fill text-sm-center nav-link active" href="portfolio.html">Portfolio</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="flex-sm-fill text-sm-center nav-link" href="contact.html">Contact</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="portfolio.html">Portfolio <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
-            </nav>
-            <!--<nav id="nav">
-                <a href="index.html">About</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        -->
-        </header>
-        <div id="main-container" class="container">
-            <section class="main-section">
-                <h1>Portfolio</h1>
-                <div class="work">
-                    <img src="assets/images/technics-q-c-640-480-1.jpg" alt="Word Guess">
-
-                    <h3>Word Guess</h3>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <header class="col-12">
+                    <h1 class="display-1">Portfolio</h1>
+                </header>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card bg-dark">
+                        <a href="https://scratch.mit.edu/projects/246212816/" target="_blank"><img class="card-img-top" src="assets/images/invaders.jpg" alt="Game screenshot"></a>
+                        <div class="card-body">
+                            <h3>Invaders</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="work">
-                    <img src="assets/images/technics-q-c-640-480-2.jpg" alt="RPG Game">
-
-                    <h3>RPG Game</h3>
+                <div class="col-md-4">
+                    <div class="card bg-dark">
+                        <a href="https://vimeo.com/129980354" target="_blank"><img class="card-img-top" src="assets/images/pockherc-low.jpg" alt="Video still"></a>
+                        <div class="card-body">
+                            <h3>Pocket Hercules</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="work">
-                    <img src="assets/images/technics-q-c-640-480-5.jpg" alt="Trivia Game">
-
-                    <h3>Trivia Game</h3>
+                <div class="col-md-4">
+                    <div class="card bg-dark">
+                        <a href="#"><img class="card-img-top" src="assets/images/TBA-1.jpg" alt="Placeholder card"></a>
+                        <div class="card-body">
+                            <h3>TBA</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="work">
-                    <img src="assets/images/technics-q-c-640-480-7.jpg" alt="Rutgers Info Widget">
-
-                    <h3>Rutgers Info Widget</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card bg-dark">
+                        <a href="#"><img class="card-img-top" src="assets/images/TBA-2.jpg" alt="Placeholder card"></a>
+                        <div class="card-body">
+                            <h3>TBA</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="work">
-                    <img src="assets/images/technics-q-c-640-480-9.jpg" alt="Rock Paper Scissors">
-
-                    <h3>Rock Paper Scissors</h3>
+                <div class="col-md-4">
+                    <div class="card bg-dark">
+                        <a href="#"><img class="card-img-top" src="assets/images/TBA-3.jpg" alt="Placeholder card"></a>
+                        <div class="card-body">
+                            <h3>TBA</h3>
+                        </div>
+                    </div>
                 </div>
-            </section>
+                <div class="col-md-4">
+                    <div class="card bg-dark">
+                        <a href="#"><img class="card-img-top" src="assets/images/TBA-4.jpg" alt="Placeholder card"></a>
+                        <div class="card-body">
+                            <h3>TBA</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <footer>
-            <div class="container">
-                &copy;David McNeary<br />
-                <!--get icons for this section and figure out overflow
-                <img src="assets/images/icon.png" id="footer-icon">-->
+        <footer class="row align-start-top fixed-bottom">
+            <!--footer-->
+            <div class="col">&copy; David McNeary 2018</div>
+            <div class="col">
+                <span>
+                    <a href="https://www.linkedin.com/in/davidmcneary/" target="_blank"><img src="assets/images/icons/linked.png" alt="LinkedIn profile badge" class="link-badge"></a>
+                    <a href="https://github.com/dmcneary/" target="_blank"><img src="assets/images/icons/github.png" alt="GitHub profile badge" class="link-badge"></a>
+                    <a href="https://www.instagram.com/david.mcneary/" target="_blank"><img src="assets/images/icons/ig.png" alt="Instagram profile badge" class="link-badge"></a>
+                    <a href="https://www.strava.com/athletes/144397" target="_blank"><img src="assets/images/icons/strava.png" alt="Strava profile badge" class="link-badge"></a>
+                </span>
             </div>
         </footer>
     </body>
