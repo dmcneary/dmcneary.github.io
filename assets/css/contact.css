@@ -1,31 +1,17 @@
-#contact-form ul {
-    margin-bottom: 20px;
-}
-  
-#contact-form li {
-    margin-bottom: 10px;
-}
-  
-input[type=text], input[type=email], 
-textarea, label {
-    display: block;
-    width: 100%;
+label {
+    margin: 15px;
 }
   
 input[type=text], input[type=email],
 textarea {
-    height: 35px;
-    padding: 0 10px;
-    font-size: 14px;
     border: 1px solid #dddddd;
 }
   
-textarea {
-    height: 200px;
+#contactMessage {
+    height: 350px;
 }
-  
+
 input[type=submit] {
-    padding: 10px 30px;
     font-size: 18px;
     color: #ffffff;
     cursor: pointer;
