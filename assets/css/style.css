@@ -1,33 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
+
 body {
-    background-image: url('../images/binding_dark.png');
-    color: #888;
-    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    background-image: url('../images/bg-light.png');
+    color: #FFF;
+    font-family: Roboto, Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-h1, h3 {
-    font-family: Georgia, Times, "Times New Roman", serif;
-    color: #4aaaa5;
-}
-
-h1 {
-    border-bottom: 3px solid #dddddd;
-}
-
-h3 {
-    border-bottom: 2px solid #eeeeee;
-}
-  
-nav a {
-    color: #999;
+a:link {
+    color: #c2b5c4;
     text-decoration: none;
-    border-left: 1px solid #efefef;
 }
-  
-nav a:first-child {
-    border-left: 0 none;
+
+a:visted {
+    color: #FF00FF;
 }
+
+a:hover {
+    color: whitesmoke;
+    text-decoration: underline;
+    text-decoration-color: gold;
+    background-color: #96d6dd
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto Slab", Georgia, 'Times New Roman', Times, serif;
+    color: #FFF;
+    text-shadow: 2px #9B200E
+}
+
+nav {
+    background-color: #9B200E;
+}
+
+
 
 /* main */
+section {
+    background-color: #D7CA49;
+}
+
+.screenshot {
+    max-height: 200px;
+    max-width: 200px;
+}
+.card {
+    background-color: #9B200E;
+}
 .profile-picture {
     width: auto;
     height: 200px;
@@ -39,14 +58,30 @@ nav a:first-child {
     -webkit-filter: saturate(7); 
     filter: saturate(7);
 }
+
+.header-text {
+    
+    animation-duration: 3s;
+    animation-name: fadein;
+}
 /* footer */
 footer {
-    color: #cccccc;
+    color: #FFF;
     text-align: center;
-    background: #666666;
+    background: #9B200E;
     border-top: 8px solid #343a40;
 }
 
 .link-badge {
     max-height: 29px;
 }
+
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
