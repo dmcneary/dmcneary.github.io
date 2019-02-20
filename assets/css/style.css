@@ -31,13 +31,14 @@ h1, h2, h3, h4, h5, h6 {
 
 nav {
     background-color: #9B200E;
+    margin-bottom: 100px;
 }
-
-
 
 /* main */
 section {
-    background-color: #D7CA49;
+    background-color: darkgoldenrod ;
+    width: 100%;
+    padding: 10px;
 }
 
 .screenshot {
@@ -50,8 +51,6 @@ section {
 .profile-picture {
     width: auto;
     height: 200px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .profile-picture:hover {
