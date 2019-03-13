@@ -29,6 +29,10 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 2px #9B200E
 }
 
+#contact {
+    position: relative;
+    left: 15px;
+}
 nav {
     background-color: #9B200E;
     margin-bottom: 100px;
