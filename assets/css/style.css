@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
 
 body {
-    background-image: url('../images/bg-light.png');
+    background-image: url('../images/ricepaper_v3.png');
     color: #FFF;
     font-family: Roboto, Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
@@ -28,11 +28,15 @@ h1, h2, h3, h4, h5, h6 {
     color: #FFF;
     text-shadow: 2px #9B200E
 }
+.jumbotron {
+    background-image: url('../images/desk-bg.JPG');
+}
 
 #contact {
     position: relative;
     left: 15px;
 }
+
 nav {
     background-color: #9B200E;
     margin-bottom: 100px;
