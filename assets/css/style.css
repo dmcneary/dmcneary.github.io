@@ -8,28 +8,29 @@ body {
 }
 
 a:link {
-    color: #c2b5c4;
+    color: #FFF;
     text-decoration: none;
 }
 
-a:visted {
-    color: #FF00FF;
+a:active {
+    color: #5621A3;
+}
+
+a:visited {
+    color: #212DA3;
 }
 
 a:hover {
     color: whitesmoke;
     text-decoration: underline;
     text-decoration-color: gold;
-    background-color: #96d6dd
+    background-color:#2DA321
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Roboto Slab", Georgia, 'Times New Roman', Times, serif;
     color: #FFF;
-    text-shadow: 2px #9B200E
-}
-.jumbotron {
-    background-image: url('../images/desk-bg.JPG');
+    text-shadow: 2px #216EA3;
 }
 
 #contact {
@@ -38,23 +39,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav {
-    background-color: #9B200E;
+    color: #FFF;
+    background-color: #21A356;
     margin-bottom: 100px;
+    border-bottom: 8px solid #343a40;
 }
 
 /* main */
 section {
-    background-color: darkgoldenrod ;
     width: 100%;
     padding: 10px;
 }
 
 .screenshot {
     max-height: 200px;
-    max-width: 200px;
+    max-width: 300px;
 }
-.card {
-    background-color: #9B200E;
+.card, .jumbotron , section {
+    background-color: #216EA3;
 }
 .profile-picture {
     width: auto;
@@ -67,7 +69,6 @@ section {
 }
 
 .header-text {
-    
     animation-duration: 3s;
     animation-name: fadein;
 }
@@ -75,12 +76,54 @@ section {
 footer {
     color: #FFF;
     text-align: center;
-    background: #9B200E;
+    background: #21A356;
     border-top: 8px solid #343a40;
 }
 
 .link-badge {
     max-height: 29px;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 300px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
 }
 
 @keyframes fadein {

@@ -13,42 +13,40 @@
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-md navbar-dark sticky-top">
-            <a class="navbar-brand" href="index.html">
 
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+        <a class="navbar-brand" href="index.html">
+
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
         <div class="row">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1 class="display-1">David McNeary</h1>
-                    <p class="lead">Web Developer</p>
+                    <h1 class="display-1 text-center">David McNeary</h1>
+                    <p class="lead text-center">Web Developer</p>
                     <div class="media mb-3" id="about">
                         <section class="media-body">
                             <p>I am a full-stack software engineer with a strong affinity for JavaScript solutions.</p>
-                        </section>
-                    </div>
-                    <div class="media mb-3" id="cycling">
-                        <section class="media-body">
-                            <h3 class="mt-0">Cycling</h3>
                             <p>Presently, I am employed as a lead service technician at Cynergy Cycles, a leading
                                 bicycle retailer in Santa Monica, CA. I'm particularly yearning to dive into the
                                 intersection of tech and bicycling - fitness trackers, GPS mapping and tracking, and
@@ -58,26 +56,27 @@
                             <img src="assets/images/mech.jpg" class="profile-picture" alt="profile picture">
                         </div>
                     </div>
-
                 </div>
             </div>
-            <section class="row" id="contact">
-                <div class="col-6 card mx-auto mb-1 text-center">
-                    <p class="px-2">My <a href="https://drive.google.com/open?id=1UbYlC3NjyCoZuydD0N8gcKLozcpjaVof"
-                            target="_blank">resume</a> is currently hosted on Google Drive</p>
-                    <p class="px-2">
-                        <a href="https://www.linkedin.com/in/davidmcneary/" target="_blank"><img
-                                src="assets/images/icons/linked.png" alt="LinkedIn profile badge"
-                                class="link-badge"></a>
-                        LinkedIn Profile
-                    </p>
-                    <p class="px-2">
-                        <a href="https://github.com/dmcneary/" target="_blank"><img src="assets/images/icons/github.png"
-                                alt="GitHub profile badge" class="link-badge"></a>
-                        GitHub
-                    </p>
-                </div>
-                <!-- comment form - link to firebase eventually, stylize as popup menu? chat button at bottom right, or something
+        </div>
+
+        <section class="row mb-3" id="contact">
+
+            <div class="col-12 mx-auto card text-center">
+                <p class="px-2">My  resume is currently hosted on <a href="https://drive.google.com/open?id=1UbYlC3NjyCoZuydD0N8gcKLozcpjaVof"
+                        target="_blank">Google Drive</a></p>
+                <p class="px-2">
+                    <a href="https://www.linkedin.com/in/davidmcneary/" target="_blank"><img
+                            src="assets/images/icons/linked.png" alt="LinkedIn profile badge" class="link-badge">
+                    LinkedIn Profile</a>
+                </p>
+                <p class="px-2">
+                    <a href="https://github.com/dmcneary/" target="_blank"><img src="assets/images/icons/github.png"
+                            alt="GitHub profile badge" class="link-badge">
+                    GitHub</a>
+                </p>
+            </div>
+            <!-- comment form - link to firebase eventually, stylize as popup menu? chat button at bottom right, or something
             <div class="row">
                 <div class="col-md-5 align-self-center">
                     <form>
@@ -95,91 +94,130 @@
                         </div>
                     </form>
                 </div>-->
-            </section>
+        </section>
 
-            <section id="portfolio">
-                <header class="col-12">
-                    <h1 class="display-3">Portfolio</h1>
-                </header>
-                <!-- need to stylize cards better-->
-                <div class="row mb-5">
-                    <div class="col-md-4">
-                        <div class="card text-center">
-                            <a href="https://github.com/dmcneary/bamazon-cli" target="_blank">
-                                <img class="card-img-top screenshot" src="assets/images/bamazon.JPG" alt="Screenshot">
-                            </a>
-                            <div class="card-body">
-                                <h6 class="text-uppercase">Bamazon CLI</h6>
-                                <dl>
-                                    <dt>Languages & tech used:</dt>
-                                    <dd>JavaScript</dd>
-                                    <dd>Node.js</dd>
-                                    <dd>npm</dd>
-                                    <dd>MySQL</dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center">
-                            <a href="https://dmcneary.github.io/giphy-gator/" target="_blank">
-                                <img class="card-img-top screenshot" src="assets/images/giphy-gator.JPG"
-                                    alt="Game screenshot">
-                            </a>
-                            <div class="card-body">
-                                <h6 class="text-uppercase">Giphy Gator</h6>
-                                <dl>
-                                    <dt>Languages & tech used:</dt>
-                                    <dd>HTML5</dd>
-                                    <dd>CSS3</dd>
-                                    <dd>JavaScript & jQuery</dd>
-                                    <dd>Giphy API</dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-center">
-                            <!--friend finder-->
-                            <a href="https://kathdoza.github.io/project_1/" target="_blank">
-                                <img class="card-img-top screenshot" src="assets/images/project-1-logo.png"
-                                    alt="Screenshot">
-                            </a>
-                            <div class="card-body">
-                                <h6 class="text-uppercase">In or Out</h6>
-                                <dl>
-                                    <dt>Languages & tech used:</dt>
-                                    <dd>HTML5</dd>
-                                    <dd>CSS3</dd>
-                                    <dd>JavaScript & jQuery</dd>
-                                    <dd>Nutritionix API</dd>
-                                    <dd>Food2Fork API</dd>
-                                    <dd>FireBase</dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <footer class="row align-start-top fixed-bottom">
-                <div class="col">&copy; David McNeary 2018</div>
-                <div class="col">
-                    <span>
-                        <a href="https://www.linkedin.com/in/davidmcneary/" target="_blank"><img
-                                src="assets/images/icons/linked.png" alt="LinkedIn profile badge"
-                                class="link-badge"></a>
-                        <a href="https://github.com/dmcneary/" target="_blank"><img src="assets/images/icons/github.png"
-                                alt="GitHub profile badge" class="link-badge"></a>
-                        <a href="https://www.instagram.com/david.mcneary/" target="_blank"><img
-                                src="assets/images/icons/ig.png" alt="Instagram profile badge" class="link-badge"></a>
-                        <a href="https://www.strava.com/athletes/144397" target="_blank"><img
-                                src="assets/images/icons/strava.png" alt="Strava profile badge" class="link-badge"></a>
-                    </span>
-                </div>
-            </footer>
+        <div class="row">
+            <img src="./assets/images/desk-bg.JPG" class="mx-auto img-fluid mb-3" alt="desktop image">
         </div>
+
+        <section class="row mx-auto mb-5" id="portfolio">
+
+            <header class="col-12">
+                <h1 class="display-3">Portfolio</h1>
+            </header>
+
+            <div class="row mb-5">
+
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                            <div class="flipper">
+                                <div class="front">
+                                    <img class="card-img-top screenshot" src="assets/images/bamazon.JPG"
+                                        alt="Screenshot">
+                                </div>
+                                <div class="back">
+                                    <div class="card-body">
+                                        <h6 class="text-uppercase">Bamazon CLI</h6>
+                                        <span>
+                                            <a href="https://github.com/dmcneary/bamazon-cli" target="_blank">Github</a>
+                                        </span>
+                                        <dl>
+                                            <dt>Languages & tech used:</dt>
+                                            <dd>JavaScript</dd>
+                                            <dd>Node.js</dd>
+                                            <dd>npm</dd>
+                                            <dd>MySQL</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                            <div class="flipper">
+                                <div class="front">
+                                    <img class="card-img-top screenshot" src="assets/images/giphy-gator.JPG"
+                                        alt="Screenshot">
+                                </div>
+                                <div class="back">
+                                    <div class="card-body">
+                                        <h6 class="text-uppercase">Giphy Gator</h6>
+                                        <span>
+                                            <a href="https://dmcneary.github.io/giphy-gator/" target="_blank">View
+                                                site</a> |
+                                            <a href="https://github.com/dmcneary/giphy-gator" target="_blank">Github</a>
+                                        </span>
+                                        <dl>
+                                            <dt>Languages & tech used:</dt>
+                                            <dd>HTML5</dd>
+                                            <dd>CSS3</dd>
+                                            <dd>JavaScript & jQuery</dd>
+                                            <dd>Giphy API</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                            <div class="flipper">
+                                <div class="front">
+                                    <img class="card-img-top screenshot" src="assets/images/friend-finder.png"
+                                        alt="Screenshot">
+                                </div>
+                                <div class="back">
+                                    <div class="card-body">
+                                        <h6 class="text-uppercase">Friend Finder</h6>
+                                        <span>
+                                            <a href="https://secure-peak-87164.herokuapp.com/" target="_blank">View
+                                                site</a> |
+                                            <a href="https://github.com/dmcneary/friend-finder"
+                                                target="_blank">Github</a>
+                                        </span>
+                                        <dl>
+                                            <dt>Languages & tech used:</dt>
+                                            <dd>HTML5</dd>
+                                            <dd>CSS3 & Bootstrap</dd>
+                                            <dd>JavaScript & jQuery</dd>
+                                            <dd>Node.js and Express.js</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="row align-start-top fixed-bottom">
+            <div class="col">&copy; David McNeary 2018</div>
+            <div class="col">
+                <span>
+                    <a href="https://www.linkedin.com/in/davidmcneary/" target="_blank"><img
+                            src="assets/images/icons/linked.png" alt="LinkedIn profile badge" class="link-badge"></a>
+                    <a href="https://github.com/dmcneary/" target="_blank"><img src="assets/images/icons/github.png"
+                            alt="GitHub profile badge" class="link-badge"></a>
+                    <a href="https://www.instagram.com/david.mcneary/" target="_blank"><img
+                            src="assets/images/icons/ig.png" alt="Instagram profile badge" class="link-badge"></a>
+                    <a href="https://www.strava.com/athletes/144397" target="_blank"><img
+                            src="assets/images/icons/strava.png" alt="Strava profile badge" class="link-badge"></a>
+                </span>
+            </div>
+        </footer>
     </div>
-    class="landing-section-text
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
