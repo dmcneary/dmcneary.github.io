@@ -8,16 +8,25 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
-        <a class="navbar-brand" href="index.html">
-
-        </a>
+        <img src="assets/images/icons/headericon.png" />
+        <p class="navbar-brand">David McNeary</p>
+        <div class="float-right">
+                <a href="./assets/resume.pdf"target="_blank"><i class="fas fa-file"></i></a><br>
+                <a href="https://github.com/dmcneary/" target="_blank"><i class="fab fa-github-alt"></i></a><br>
+                <a href="https://www.linkedin.com/in/davidmcneary/" target="_blank"><i class="fab fa-linkedin-in"></i></a><br>
+            </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -37,13 +46,12 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="parallax fade-in"></div>
 
-        <div class="row">
+    <div class="container">
+        <div class="row ">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1 class="display-1 text-center">David McNeary</h1>
-                    <p class="lead text-center">Web Developer</p>
                     <div class="media mb-3" id="about">
                         <section class="media-body">
                             <img src="assets/images/mech.jpg" class="profile-picture float-left mr-2" alt="profile picture">
@@ -52,62 +60,20 @@
                                 bicycle retailer in Santa Monica, CA. I'm particularly yearning to dive into the
                                 intersection of tech and bicycling - fitness trackers, GPS mapping and tracking, and
                                 electric bicycles pique my interest.</p>
+                            <p>I recently completed The Coding Bootcamp at UCLA Extension, and hold a certification for full-stack web development in the MERN stack. I am very intrigued by React.js development with Redux, GIS/GPS interaction, and exploring the many possibilities of Node.js.</p>
                         </section>
-                        
-                            
-                        
                     </div>
                 </div>
             </div>
         </div>
 
-        <section class="row mb-3" id="contact">
+        <section class="row mx-auto mb-5 fade-in" id="portfolio">
 
-            <div class="col-12 mx-auto card text-center">
-                <p class="px-2">My  resume is currently hosted on <a href="https://drive.google.com/open?id=1UbYlC3NjyCoZuydD0N8gcKLozcpjaVof"
-                        target="_blank">Google Drive</a></p>
-                <p class="px-2">
-                    <a href="https://www.linkedin.com/in/davidmcneary/" target="_blank"><img
-                            src="assets/images/icons/linked.png" alt="LinkedIn profile badge" class="link-badge">
-                    LinkedIn Profile</a>
-                </p>
-                <p class="px-2">
-                    <a href="https://github.com/dmcneary/" target="_blank"><img src="assets/images/icons/github.png"
-                            alt="GitHub profile badge" class="link-badge">
-                    GitHub</a>
-                </p>
-            </div>
-            <!-- comment form - link to firebase eventually, stylize as popup menu? chat button at bottom right, or something
-            <div class="row">
-                <div class="col-md-5 align-self-center">
-                    <form>
-                        <div class="form-group">
-                            <label for="contactName">Name</label>
-                            <input type="text" class="form-control" id="contactName" placeholder="your name">
-                        </div>
-                        <div class="form-group">
-                            <label for="contactEmail">Email address</label>
-                            <input type="email" class="form-control" id="contactEmail" aria-describedby="emailHelp" placeholder="your email">
-                        </div>
-                        <div class="form-group">
-                            <label for="contactMessage">Your message</label>
-                            <input type="text" class="form-control" id="contactMessage" placeholder="your message here">
-                        </div>
-                    </form>
-                </div>-->
-        </section>
-
-        <div class="row">
-            <img src="./assets/images/desk-bg.JPG" class="mx-auto img-fluid mb-3" alt="desktop image">
-        </div>
-
-        <section class="row mx-auto mb-5" id="portfolio">
-
-            <header class="col-12">
+            <header class="col-12 text-center">
                 <h1 class="display-3">Portfolio</h1>
             </header>
 
-            <div class="row mb-5">
+            <div class="row mb-5 ml-3">
 
                 <div class="col-md-4">
                     <div class="card text-center">
@@ -142,23 +108,25 @@
                         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                             <div class="flipper">
                                 <div class="front">
-                                    <img class="card-img-top screenshot" src="assets/images/giphy-gator.JPG"
+                                    <img class="card-img-top screenshot" src="assets/images/fit-monkeys.jpg"
                                         alt="Screenshot">
                                 </div>
                                 <div class="back">
                                     <div class="card-body">
-                                        <h6 class="text-uppercase">Giphy Gator</h6>
+                                        <h6 class="text-uppercase">Fit Monkeys</h6>
                                         <span>
-                                            <a href="https://dmcneary.github.io/giphy-gator/" target="_blank">View
+                                            <a href="https://obscure-wave-97311.herokuapp.com" target="_blank">View
                                                 site</a> |
-                                            <a href="https://github.com/dmcneary/giphy-gator" target="_blank">Github</a>
+                                            <a href="https://github.com/dmcneary/final-project" target="_blank">Github</a>
                                         </span>
                                         <dl>
                                             <dt>Languages & tech used:</dt>
-                                            <dd>HTML5</dd>
-                                            <dd>CSS3</dd>
-                                            <dd>JavaScript & jQuery</dd>
-                                            <dd>Giphy API</dd>
+                                            <dd>React.js with React Router</dd>
+                                            <dd>CSS3 with Bootstrap 4</dd>
+                                            <dd>Node.js with Express</dd>
+                                            <dd>MongoDB with Mongoose</dd>
+                                            <dd>Passport.js and BCrypt</dd>
+                                            <dd>Leaflet.js and leaflet-routing-machine</dd>
                                         </dl>
                                     </div>
                                 </div>
@@ -202,7 +170,7 @@
         </section>
 
         <footer class="row align-start-top fixed-bottom">
-            <div class="col">&copy; David McNeary 2018</div>
+            <div class="col">&copy; 2018</div>
             <div class="col">
                 <span>
                     <a href="https://www.linkedin.com/in/davidmcneary/" target="_blank"><img

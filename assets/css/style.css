@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-image: url('../images/ricepaper_v3.png');
     color: #FFF;
@@ -41,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 nav {
     color: #FFF;
     background-color: #21A356;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
     border-bottom: 8px solid #343a40;
 }
 
@@ -52,9 +56,10 @@ section {
 }
 
 .screenshot {
-    max-height: 200px;
-    max-width: 300px;
+    max-height: 100%;
+    max-width: auto;
 }
+
 .card, .jumbotron , section {
     background-color: #216EA3;
 }
@@ -68,10 +73,20 @@ section {
     filter: saturate(7);
 }
 
-.header-text {
+.fade-in{
     animation-duration: 3s;
     animation-name: fadein;
 }
+
+.parallax { 
+    background-image: url("../images/desk-bg.JPG");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 /* footer */
 footer {
     color: #FFF;
@@ -91,6 +106,7 @@ footer {
 
 /* flip the pane when hovered */
 .flip-container:hover .flipper, .flip-container.hover .flipper {
+    -webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
 
@@ -101,7 +117,8 @@ footer {
 
 /* flip speed goes here */
 .flipper {
-	transition: 0.6s;
+    transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 	position: relative;
 }
@@ -117,14 +134,29 @@ footer {
 /* front pane, placed above back */
 .front {
 	z-index: 2;
-	/* for firefox 31 */
+    /* for firefox 31 */
+    -webkit-transform: rotateY(0deg);
 	transform: rotateY(0deg);
 }
 
 /* back, initially hidden pane */
 .back {
+    -webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+    max-width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-attachment: scroll;
+    }
+  }
 
 @keyframes fadein {
     from {
