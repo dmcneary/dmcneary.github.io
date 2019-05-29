@@ -73,7 +73,7 @@ section {
     filter: saturate(7);
 }
 
-.fade-in{
+.fade-in {
     animation-duration: 3s;
     animation-name: fadein;
 }
@@ -125,6 +125,7 @@ footer {
 
 /* hide back of pane during swap */
 .front, .back {
+    -webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	position: absolute;
 	top: 0;
@@ -149,7 +150,7 @@ footer {
 @media only screen and (max-device-width: 1366px) {
     .parallax {
     max-width: 100%;
-    height: auto;
+    height: 400px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 20px;
