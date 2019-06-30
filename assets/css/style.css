@@ -37,19 +37,14 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 2px #216EA3;
 }
 
-#contact {
-    position: relative;
-    left: 15px;
-}
-
 nav {
     color: #FFF;
     background-color: #21A356;
     margin-bottom: 0px;
     border-bottom: 8px solid #343a40;
+    z-index: 1000;
 }
 
-/* main */
 section {
     width: 100%;
     padding: 10px;
@@ -62,10 +57,16 @@ section {
 
 .card, .jumbotron , section {
     background-color: #216EA3;
+    margin: 15px;
 }
+
 .profile-picture {
     width: auto;
     height: 200px;
+}
+
+.media-body img {
+    margin-right: 30px;
 }
 
 .profile-picture:hover {
@@ -73,7 +74,11 @@ section {
     filter: saturate(7);
 }
 
-.fade-in{
+.contact-info > div, .contact-info > p {
+    display: inline;
+}
+
+.fade-in {
     animation-duration: 3s;
     animation-name: fadein;
 }
@@ -93,6 +98,10 @@ footer {
     text-align: center;
     background: #21A356;
     border-top: 8px solid #343a40;
+}
+
+.card {
+    border: none;
 }
 
 .link-badge {
