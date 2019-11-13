@@ -55,14 +55,9 @@ section {
     max-width: auto;
 }
 
-.card, .jumbotron , section {
-    background-color: #216EA3;
+.card, section {
+    background-color: rgb(91, 158, 118);
     margin: 15px;
-}
-
-.profile-picture {
-    width: auto;
-    height: 200px;
 }
 
 .media-body img {
@@ -79,7 +74,7 @@ section {
     animation-name: fadein;
 }
 
-.parallax { 
+.parallax {
     background-image: url("../images/desk-bg.JPG");
     height: 100%;
     background-attachment: fixed;
