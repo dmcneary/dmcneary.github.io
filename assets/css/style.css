@@ -48,6 +48,7 @@ nav {
 section {
     width: 100%;
     padding: 10px;
+    border-radius: 10%;
 }
 
 .screenshot {
@@ -74,6 +75,10 @@ section {
     animation-name: fadein;
 }
 
+.glow {
+    animation: glow 0.5s infinite alternate-reverse;
+}
+
 .parallax {
     background-image: url("../images/desk-bg.JPG");
     height: 100%;
@@ -81,7 +86,11 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
+
+#portfolio {
+    margin-bottom: 5rem;
+}
 
 /* footer */
 footer {
@@ -157,7 +166,17 @@ footer {
     margin-bottom: 30px;
     background-attachment: scroll;
     }
-  }
+}
+
+@media only screen and (max-device-width: 390px) {
+    .card {
+        
+    }
+    
+    .screenshot {
+        max-width: 200px;
+    }
+}
 
 @keyframes fadein {
     from {
@@ -168,3 +187,13 @@ footer {
       opacity: 1;
     }
   }
+
+@keyframes glow {
+    from {
+        filter: saturate(2);
+    }
+
+    to {
+        filter: saturate(7);
+    }
+}
