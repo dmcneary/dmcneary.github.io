@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David McNeary - Web Developer</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -14,14 +17,15 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top justify-content-center">
+    <nav class="navbar navbar-dark fixed-top justify-content-center">
         <img src="assets/images/icons/headericon.png" />
-        <p class="navbar-brand">David McNeary</p>
+        <h1 class="navbar-brand">David McNeary</h1>
     </nav>
 
-    <div class="parallax fade-in"></div>
+    <div class="parallax fade-in"><p class="animate__animated animate__backInLeft animate__delay-1 animate__slow">Let's build together.</p></div>
+    
 
-    <div class="container">
+    <main>
         <div class="row justify-content-center">
             <section class="col-md-4" id="about">
                 <header class="col-12 text-center">
@@ -44,215 +48,197 @@
                 <div class="mx-auto">
                     <p><strong>email: </strong><a href="mailto:djmcwebdev@gmail.com">djmcwebdev@gmail.com</a></p>
                     <div class="d-inline mx-3 my-3">
-                        <p><a href="./assets/technical-resume.pdf" target="_blank"><i class="fas fa-file fa-4x mr-2"> </i>Resume</a></p>
+                        <p><a href="./assets/technical-resume.pdf" target="_blank"><i class="fas fa-file fa-4x mr-2">
+                                </i>Resume</a></p>
                         <p><a href="https://github.com/dmcneary/" target="_blank"><i
-                                class="fab fa-github-alt fa-4x mr-2"> </i>Github</a></p>
+                                    class="fab fa-github-alt fa-4x mr-2"> </i>Github</a></p>
                         <p><a href="https://www.linkedin.com/in/davidmcneary/" target="_blank"><i
-                                class="fab fa-linkedin-in fa-4x mr-2"> </i>LinkedIn</a></p>
+                                    class="fab fa-linkedin-in fa-4x mr-2"> </i>LinkedIn</a></p>
                     </div>
                 </div>
             </section>
         </div>
 
-        <section class="row mx-auto mt-0" id="portfolio">
+        <section id="portfolio">
             <header class="col-12 text-center">
                 <h2 class="display-4">Portfolio</h2>
             </header>
             <div class="row mb-1">
-                <div class="col-md-4">
-                    <div class="card text-center">
-                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                            <div class="flipper">
-                                <div class="front">
-                                    <img class="card-img-top screenshot" src="assets/images/fit-monkeys.jpg"
-                                        alt="Screenshot">
-                                </div>
-                                <div class="back">
-                                    <div class="card-body">
-                                        <h6 class="text-uppercase">Fit Monkeys</h6>
-                                        <span>
-                                            <a href="https://obscure-wave-97311.herokuapp.com" target="_blank">View
-                                                site</a> |
-                                            <a href="https://github.com/dmcneary/final-project"
-                                                target="_blank">Github</a>
-                                        </span>
-                                        <dl>
-                                            <dt>Languages & tech used:</dt>
-                                            <dd>React.js with React Router</dd>
-                                            <dd>CSS3 with Bootstrap 4</dd>
-                                            <dd>Node.js with Express</dd>
-                                            <dd>MongoDB with Mongoose</dd>
-                                            <dd>Passport.js and BCrypt</dd>
-                                            <dd>Leaflet.js and leaflet-routing-machine</dd>
-                                        </dl>
-                                    </div>
-                                </div>
+
+
+                <div class="flip-container col-md-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="card-img-top screenshot" src="assets/images/fit-monkeys.jpg" alt="Screenshot">
+                        </div>
+                        <div class="back">
+                            <div class="card-body">
+                                <h6 class="text-uppercase">Fit Monkeys</h6>
+                                <span>
+                                    <a href="https://obscure-wave-97311.herokuapp.com" target="_blank">View
+                                        site</a> |
+                                    <a href="https://github.com/dmcneary/final-project" target="_blank">Github</a>
+                                </span>
+                                <dl>
+                                    <dt>Languages & tech used:</dt>
+                                    <dd>React.js with React Router</dd>
+                                    <dd>CSS3 with Bootstrap 4</dd>
+                                    <dd>Node.js with Express</dd>
+                                    <dd>MongoDB with Mongoose</dd>
+                                    <dd>Passport.js and BCrypt</dd>
+                                    <dd>Leaflet.js and leaflet-routing-machine</dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card text-center">
-                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                            <div class="flipper">
-                                <div class="front">
-                                    <img class="card-img-top screenshot" src="assets/images/bamazon.JPG"
-                                        alt="Screenshot">
-                                </div>
-                                <div class="back">
-                                    <div class="card-body">
-                                        <h6 class="text-uppercase">Bamazon CLI</h6>
-                                        <span>
-                                            <a href="https://github.com/dmcneary/bamazon-cli" target="_blank">Github</a>
-                                        </span>
-                                        <dl>
-                                            <dt>Languages & tech used:</dt>
-                                            <dd>JavaScript</dd>
-                                            <dd>Node.js</dd>
-                                            <dd>npm</dd>
-                                            <dd>MySQL</dd>
-                                        </dl>
-                                    </div>
-                                </div>
+
+
+
+                <div class="flip-container col-md-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="card-img-top screenshot" src="assets/images/bamazon.JPG" alt="Screenshot">
+                        </div>
+                        <div class="back">
+                            <div class="card-body">
+                                <h6 class="text-uppercase">Bamazon CLI</h6>
+                                <span>
+                                    <a href="https://github.com/dmcneary/bamazon-cli" target="_blank">Github</a>
+                                </span>
+                                <dl>
+                                    <dt>Languages & tech used:</dt>
+                                    <dd>JavaScript</dd>
+                                    <dd>Node.js</dd>
+                                    <dd>npm</dd>
+                                    <dd>MySQL</dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card text-center">
-                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                            <div class="flipper">
-                                <div class="front">
-                                    <img class="card-img-top screenshot" src="assets/images/friend-finder.PNG"
-                                        alt="Screenshot">
-                                </div>
-                                <div class="back">
-                                    <div class="card-body">
-                                        <h6 class="text-uppercase">Friend Finder</h6>
-                                        <span>
-                                            <a href="https://find-more-friends.herokuapp.com/" target="_blank">View
-                                                site</a> |
-                                            <a href="https://github.com/dmcneary/friend-finder"
-                                                target="_blank">Github</a>
-                                        </span>
-                                        <dl>
-                                            <dt>Languages & tech used:</dt>
-                                            <dd>HTML5</dd>
-                                            <dd>CSS3 & Bootstrap</dd>
-                                            <dd>JavaScript & jQuery</dd>
-                                            <dd>Node.js and Express.js</dd>
-                                        </dl>
-                                    </div>
-                                </div>
+
+
+                <div class="flip-container col-md-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="card-img-top screenshot" src="assets/images/friend-finder.PNG" alt="Screenshot">
+                        </div>
+                        <div class="back">
+                            <div class="card-body">
+                                <h6 class="text-uppercase">Friend Finder</h6>
+                                <span>
+                                    <a href="https://find-more-friends.herokuapp.com/" target="_blank">View
+                                        site</a> |
+                                    <a href="https://github.com/dmcneary/friend-finder" target="_blank">Github</a>
+                                </span>
+                                <dl>
+                                    <dt>Languages & tech used:</dt>
+                                    <dd>HTML5</dd>
+                                    <dd>CSS3 & Bootstrap</dd>
+                                    <dd>JavaScript & jQuery</dd>
+                                    <dd>Node.js and Express.js</dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card text-center">
-                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                            <div class="flipper">
-                                <div class="front">
-                                    <img class="card-img-top screenshot" src="assets/images/greats.png"
-                                        alt="Screenshot">
-                                </div>
-                                <div class="back">
-                                    <div class="card-body">
-                                        <h6 class="text-uppercase">12 Cycling Greats</h6>
-                                        <span>
-                                            <a href="https://dmcneary.github.io/12-cycling-greats/" target="_blank">View
-                                                site</a> |
-                                            <a href="https://github.com/dmcneary/12-cycling-greats"
-                                                target="_blank">Github</a>
-                                        </span>
-                                        <dl>
-                                            <dt>Languages & tech used:</dt>
-                                            <dd>HTML5</dd>
-                                            <dd>CSS3 & Bootstrap</dd>
-                                            <dd>ES6</dd>
-                                            <dd>React.js</dd>
-                                        </dl>
-                                    </div>
-                                </div>
+
+                <div class="flip-container col-md-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="card-img-top screenshot" src="assets/images/greats.png" alt="Screenshot">
+                        </div>
+                        <div class="back">
+                            <div class="card-body">
+                                <h6 class="text-uppercase">12 Cycling Greats</h6>
+                                <span>
+                                    <a href="https://dmcneary.github.io/12-cycling-greats/" target="_blank">View
+                                        site</a> |
+                                    <a href="https://github.com/dmcneary/12-cycling-greats" target="_blank">Github</a>
+                                </span>
+                                <dl>
+                                    <dt>Languages & tech used:</dt>
+                                    <dd>HTML5</dd>
+                                    <dd>CSS3 & Bootstrap</dd>
+                                    <dd>ES6</dd>
+                                    <dd>React.js</dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card text-center">
-                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                            <div class="flipper">
-                                <div class="front">
-                                    <img class="card-img-top screenshot" src="assets/images/scraper.JPG"
-                                        alt="Screenshot">
-                                </div>
-                                <div class="back">
-                                    <div class="card-body">
-                                        <h6 class="text-uppercase">AP Newswire Scraper</h6>
-                                        <span>
-                                            <a href="https://ap-news-scraper.herokuapp.com/" target="_blank">View
-                                                site</a> |
-                                            <a href="https://github.com/dmcneary/news-scraper"
-                                                target="_blank">Github</a>
-                                        </span>
-                                        <dl>
-                                            <dt>Languages & tech used:</dt>
-                                            <dd>HTML5</dd>
-                                            <dd>CSS3 & Bootstrap</dd>
-                                            <dd>Handlebars.js</dd>
-                                            <dd>Cheerio.js</dd>
-                                            <dd>MongoDB with Mongoose.js</dd>
-                                            <dd>Node.js and Express.js</dd>
-                                        </dl>
-                                    </div>
-                                </div>
+
+
+                <div class="flip-container col-md-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="card-img-top screenshot" src="assets/images/scraper.JPG" alt="Screenshot">
+                        </div>
+                        <div class="back">
+                            <div class="card-body">
+                                <h6 class="text-uppercase">AP Newswire Scraper</h6>
+                                <span>
+                                    <a href="https://ap-news-scraper.herokuapp.com/" target="_blank">View
+                                        site</a> |
+                                    <a href="https://github.com/dmcneary/news-scraper" target="_blank">Github</a>
+                                </span>
+                                <dl>
+                                    <dt>Languages & tech used:</dt>
+                                    <dd>HTML5</dd>
+                                    <dd>CSS3 & Bootstrap</dd>
+                                    <dd>Handlebars.js</dd>
+                                    <dd>Cheerio.js</dd>
+                                    <dd>MongoDB with Mongoose.js</dd>
+                                    <dd>Node.js and Express.js</dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-md-4">
-                    <div class="card text-center">
-                        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                            <div class="flipper">
-                                <div class="front">
-                                    <img class="card-img-top screenshot" src="assets/images/books.png"
-                                        alt="Screenshot">
-                                </div>
-                                <div class="back">
-                                    <div class="card-body">
-                                        <h6 class="text-uppercase">Books List</h6>
-                                        <span>
-                                            <a href="https://google-books-list.herokuapp.com/" target="_blank">View
-                                                site</a> |
-                                            <a href="https://github.com/dmcneary/google-books-list"
-                                                target="_blank">Github</a>
-                                        </span>
-                                        <dl>
-                                            <dt>Languages & tech used:</dt>
-                                            <dd>HTML5</dd>
-                                            <dd>CSS3 & Bootstrap 4</dd>
-                                            <dd>React.js with ES6 & Babel</dd>
-                                            <dd>Mongo DB with Mongoose.js</dd>
-                                            <dd>Node.js with Express.js</dd>
-                                        </dl>
-                                    </div>
-                                </div>
+
+
+
+                <div class="flip-container col-md-4" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img class="card-img-top screenshot" src="assets/images/books.png" alt="Screenshot">
+                        </div>
+                        <div class="back">
+                            <div class="card-body">
+                                <h6 class="text-uppercase">Books List</h6>
+                                <span>
+                                    <a href="https://google-books-list.herokuapp.com/" target="_blank">View
+                                        site</a> |
+                                    <a href="https://github.com/dmcneary/google-books-list" target="_blank">Github</a>
+                                </span>
+                                <dl>
+                                    <dt>Languages & tech used:</dt>
+                                    <dd>HTML5</dd>
+                                    <dd>CSS3 & Bootstrap 4</dd>
+                                    <dd>React.js with ES6 & Babel</dd>
+                                    <dd>Mongo DB with Mongoose.js</dd>
+                                    <dd>Node.js with Express.js</dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
-    </div>
+    </main>
     <footer class="row align-start-top fixed-bottom">
-        <div class="col small">&copy; 2018 David McNeary</div>
+        <div class="col small">
+            <p class="mb-0">&copy; 2020 David McNeary</p>
+        </div>
         <div class="col">
             <span>
                 <a href="https://www.linkedin.com/in/davidmcneary/" target="_blank"><img
