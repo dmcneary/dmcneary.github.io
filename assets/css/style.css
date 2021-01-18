@@ -63,7 +63,7 @@ section {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 10px;
-    border-radius: 10%;
+    
 }
 
 .screenshot {
@@ -98,6 +98,14 @@ section {
     background-size: 100%;
 }
 
+@media only screen and (max-width:1093px) {
+    .parallax {
+        background-image: none;
+        background-color: darkslategray;
+        height: 50%;
+    }
+}
+
 .parallax p {
     position: relative;
     font-size: 36px;
@@ -113,13 +121,21 @@ section {
 /* footer */
 footer {
     color: #FFF;
-    text-align: center;
     background: #21A356;
     border-top: 8px solid #343a40;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+}
+
+footer p {
+    font-size: smaller;
+    
 }
 
 .link-badge {
-    max-height: 29px;
+    max-height: 25px;
 }
 
 /* entire container, keeps perspective */
