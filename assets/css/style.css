@@ -3,7 +3,7 @@
 
 html {
     height: 100%;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 body {
@@ -11,7 +11,7 @@ body {
     color: #FFF;
     font-family: Roboto, Arial, 'Helvetica Neue', Helvetica, sans-serif;
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
 }
 
 a:link {
@@ -66,9 +66,9 @@ section {
     max-width: auto;
 }
 
-.media-body img {
+/* .media-body img {
     margin-right: 30px;
-}
+} */
 
 .profile-picture:hover {
     -webkit-filter: saturate(7); 
@@ -91,11 +91,18 @@ section {
 }
 
 .parallax p {
-    position: absolute;
+    position:absolute;
     font-size: 36px;
     font-weight: bold;
+    text-align: right;
     top: 70%;
     left: 10%;
+}
+
+#about, #contact, #portfolio-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-radius: 10%;
 }
 
 #portfolio {
@@ -146,7 +153,6 @@ footer p {
     transition: 0.6s;
     -webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
-	position: relative;
 }
 
 /* hide back of pane during swap */
@@ -160,7 +166,7 @@ footer p {
 
 /* front pane, placed above back */
 .front {
-	z-index: 2;
+    z-index: 2;
     /* for firefox 31 */
     -webkit-transform: rotateY(0deg);
 	transform: rotateY(0deg);
@@ -187,9 +193,19 @@ footer p {
     .parallax p {
         position: relative;
         top: 80%;
-        left: 40%;
+        left: 0;
         font-size: 24px;;
         color: #444;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    main {
+        padding-bottom: 4.3rem;
+    }
+    .flip-container, .front, .back {
+        width: 250px;
+        height: 320px;
     }
 }
 
