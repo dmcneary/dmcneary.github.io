@@ -135,14 +135,14 @@ const Resume = () => {
         <motion.section variants={elements}>
           <Box component="header" className={classes.mainContainer}>
             <Typography variant="h4" align="center" className={classes.heading}>
-              Working Experience
+              Experience
             </Typography>
             <Box component="div" className={classes.timeLine}>
               <Typography
                 variant="h2"
                 className={`${classes.timeLineYear} ${classes.timeLineItem}`}
               >
-                2013
+                2022
               </Typography>
               <Box component="div" className={classes.timeLineItem}>
                 <Typography
@@ -150,14 +150,14 @@ const Resume = () => {
                   align="center"
                   className={classes.subHeading}
                 >
-                  web design
+                  Web Development
                 </Typography>
                 <Typography
                   variant="body1"
                   align="center"
                   className={classes.body1}
                 >
-                  company name where worked
+                  Archer Travel Service
                 </Typography>
                 <Typography
                   variant="subtitle1"
@@ -170,43 +170,42 @@ const Resume = () => {
                   laboriosam repudiandae, rerum necessitatibus nisi mollitia.
                 </Typography>
               </Box>
-              <Typography
-                variant="h2"
-                className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-              >
-                2014
-              </Typography>
               <Box component="div" className={classes.timeLineItem}>
                 <Typography
                   variant="h5"
                   align="center"
                   className={classes.subHeading}
                 >
-                  html & css
+                  IT Support
                 </Typography>
                 <Typography
                   variant="body1"
                   align="center"
                   className={classes.body1}
                 >
-                  company name where worked
+                  Tseng College at Cal State Northridge
                 </Typography>
                 <Typography
                   variant="subtitle1"
                   align="center"
                   className={classes.subtitle1}
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                  quas ipsa, laudantium totam perferendis possimus voluptatibus
-                  tenetur. Quasi voluptatibus, nam vitae eaque ad, officia
-                  laboriosam repudiandae, rerum necessitatibus nisi mollitia.
+                  <ul>
+                    <li>
+                      Assisted staff with new software installations and updates
+                    </li>
+                    <li>Deployed and configure new hardware assets</li>
+                    <li>
+                      Migrated workspaces from remote to on-campus environments
+                    </li>
+                  </ul>
                 </Typography>
               </Box>
               <Typography
                 variant="h2"
                 className={`${classes.timeLineYear} ${classes.timeLineItem}`}
               >
-                2015
+                2021
               </Typography>
               <Box component="div" className={classes.timeLineItem}>
                 <Typography
@@ -214,31 +213,32 @@ const Resume = () => {
                   align="center"
                   className={classes.subHeading}
                 >
-                  Fullstack Javascript
+                  Web Development
                 </Typography>
                 <Typography
                   variant="body1"
                   align="center"
                   className={classes.body1}
                 >
-                  company name where worked
+                  Santa Monica College
                 </Typography>
                 <Typography
                   variant="subtitle1"
                   align="center"
                   className={classes.subtitle1}
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                  quas ipsa, laudantium totam perferendis possimus voluptatibus
-                  tenetur. Quasi voluptatibus, nam vitae eaque ad, officia
-                  laboriosam repudiandae, rerum necessitatibus nisi mollitia.
+                  <ul>
+                    <li>Updated and organized assets via CMS</li>
+                    <li>Automated asset migration processes using Node.js</li>
+                    <li>Implemented custom features to vendor widgets using JavaScript</li>
+                  </ul>
                 </Typography>
               </Box>
               <Typography
                 variant="h2"
                 className={`${classes.timeLineYear} ${classes.timeLineItem}`}
               >
-                2017
+                2020
               </Typography>
               <Box component="div" className={classes.timeLineItem}>
                 <Typography
@@ -246,24 +246,77 @@ const Resume = () => {
                   align="center"
                   className={classes.subHeading}
                 >
-                  Django & React
+                  Teaching Assistant
                 </Typography>
                 <Typography
                   variant="body1"
                   align="center"
                   className={classes.body1}
                 >
-                  company name where worked
+                  Trilogy Education Services
                 </Typography>
                 <Typography
                   variant="subtitle1"
                   align="center"
                   className={classes.subtitle1}
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                  quas ipsa, laudantium totam perferendis possimus voluptatibus
-                  tenetur. Quasi voluptatibus, nam vitae eaque ad, officia
-                  laboriosam repudiandae, rerum necessitatibus nisi mollitia.
+                  <ul>
+                  <li>Oversaw a cohort of 30+ students in a remote learning environment</li>
+                  <li>Taught best practices in MERN stack web development</li>
+                  <li>Used Slack, Canvas, and Zoom  for student/staff coordination and web instruction</li>
+
+                  </ul>
+                </Typography>
+              </Box>
+              <Box component="div" className={classes.timeLineItem}>
+                <Typography
+                  variant="h5"
+                  align="center"
+                  className={classes.subHeading}
+                >
+                  IT Support
+                </Typography>
+                <Typography
+                  variant="body1"
+                  align="center"
+                  className={classes.body1}
+                >
+                  Los Angeles County Registrar/Recorder
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  align="center"
+                  className={classes.subtitle1}
+                >
+                  <ul>
+                  <li>Provided first-level onsite maintenance and support for 2020 Presidential election</li>
+                  <li>Ensured proper chain of custody for election devices</li>
+                  <li>Coordinated with central help desk to mitigate errors and outages</li>
+
+                  </ul>
+                </Typography>
+              </Box>
+              <Box component="div" className={classes.timeLineItem}>
+                <Typography
+                  variant="h5"
+                  align="center"
+                  className={classes.subHeading}
+                >
+                  Web Development
+                </Typography>
+                <Typography
+                  variant="body1"
+                  align="center"
+                  className={classes.body1}
+                >
+                  Think Electric
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  align="center"
+                  className={classes.subtitle1}
+                >
+                  Implemented updates with breaking changes to a 10-year old customized fork of open-source ERP software using Apache, Perl, PHP, and PostgreSQL.
                 </Typography>
               </Box>
             </Box>

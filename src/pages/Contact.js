@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { makeStyles, withStyles } from "@mui/styles";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import { motion } from "framer-motion";
+import emailjs from '@emailjs/browser';
 
 import Send from "@mui/icons-material/Send";
 
@@ -79,31 +80,44 @@ const content = {
 
 const Contact = () => {
   const classes = useStyles();
+  const form = useRef();
+  const serviceId = process.env.REACT_APP_MAIL_SERVICE_ID;
+  const templateId = process.env.REACT_APP_MAIL_TEMPLATE_ID;
+  const pubKey = process.env.REACT_APP_MAIL_PUBLIC_KEY;
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm(serviceId, templateId, form.current, pubKey);
+  };
+
   return (
     <motion.div exit={{ opacity: 0 }}>
       <motion.div initial="initial" animate="animate" variants={content}>
         <motion.section variants={elements}>
           <Box component="div" className={classes.contactContainer}>
             <Grid container justify="center">
-              <Box component="form" className={classes.form}>
+              <Box component="form" className={classes.form} ref={form}>
                 <Typography variant="h5" className={classes.heading}>
-                  Hire or Contact me...
+                  Let's build together!
                 </Typography>
                 <InputField
                   fullWidth={true}
                   label="Name"
+                  name="user_name"
                   variant="outlined"
                   inputProps={{ className: classes.input }}
                 />
                 <InputField
                   fullWidth={true}
                   label="Email"
+                  name="user_email"
                   variant="outlined"
                   inputProps={{ className: classes.input }}
                 />
                 <InputField
                   fullWidth={true}
                   label="Message"
+                  name="message"
                   variant="outlined"
                   multiline
                   rows={4}
@@ -114,6 +128,7 @@ const Contact = () => {
                   fullWidth={true}
                   endIcon={<Send />}
                   className={classes.button}
+                  onClick={sendEmail}
                 >
                   Contact Me
                 </Button>
