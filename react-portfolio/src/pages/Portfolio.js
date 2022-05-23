@@ -9,7 +9,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-
+import { motion } from "framer-motion";
 import project1 from "../images/fit-monkeys.jpg";
 import project2 from "../images/books.png";
 import project3 from "../images/bamazon.JPG";
@@ -79,44 +79,67 @@ const projects = [
   },
 ];
 
+const elements = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+};
+
+const content = {
+  animate: {
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
 const Portfolio = () => {
   const classes = useStyles();
   return (
-    <Box component="div" className={classes.mainContainer}>
-      <Grid container justify="center">
-        {/* Projects */}
-        {projects.map((project, i) => (
-          <Grid item xs={12} sm={8} md={4} key={i}>
-            <Card className={classes.cardContainer}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Project 1"
-                  height="140"
-                  image={project.image}
-                />
-                <CardContent>
-                  <Typography variant="h5" gutterBottom>
-                    {project.name}
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    {project.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
-                <Button size="small" color="primary">
-                  Live Demo
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <motion.div exit={{ opacity: 0 }}>
+      <motion.div initial="initial" animate="animate" variants={content}>
+        <motion.section variants={elements}>
+          <Box component="div" className={classes.mainContainer}>
+            <Grid container justify="center">
+              {/* Projects */}
+              {projects.map((project, i) => (
+                <Grid item xs={12} sm={8} md={4} key={i}>
+                  <Card className={classes.cardContainer}>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        alt="Project 1"
+                        height="140"
+                        image={project.image}
+                      />
+                      <CardContent>
+                        <Typography variant="h5" gutterBottom>
+                          {project.name}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary">
+                          {project.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Button size="small" color="primary">
+                        Share
+                      </Button>
+                      <Button size="small" color="primary">
+                        Live Demo
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </motion.section>
+      </motion.div>
+    </motion.div>
   );
 };
 

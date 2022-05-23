@@ -40,11 +40,10 @@ const Navbar = () => {
       <Divider />
       <List>
         {menuItems.map((item, i) => (
-          <Link to={item.listPath} >
+          <Link to={item.listPath} key={i}>
             <ListItem
               sx={ {color: "tan"} }
               button
-              key={i}
               onClick={() => setOpen(false)}
             >
                 <ListItemIcon sx={ {color: "tan" } }>

@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
+import { motion } from "framer-motion";
 
 import Send from "@mui/icons-material/Send";
 
@@ -59,46 +60,69 @@ const InputField = withStyles({
   },
 })(TextField);
 
+const elements = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.6, -0.05, 0.01, 0.99],
+    },
+  },
+};
+
+const content = {
+  animate: {
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
 const Contact = () => {
   const classes = useStyles();
   return (
-    <Box component="div" className={classes.contactContainer}>
-      <Grid container justify="center">
-        <Box component="form" className={classes.form}>
-          <Typography variant="h5" className={classes.heading}>
-            Hire or Contact me...
-          </Typography>
-          <InputField
-            fullWidth={true}
-            label="Name"
-            variant="outlined"
-            inputProps={{ className: classes.input }}
-          />
-          <InputField
-            fullWidth={true}
-            label="Email"
-            variant="outlined"
-            inputProps={{ className: classes.input }}
-          />
-          <InputField
-            fullWidth={true}
-            label="Message"
-            variant="outlined"
-            multiline
-            rows={4}
-            inputProps={{ className: classes.input }}
-          />
-          <Button
-            variant="outlined"
-            fullWidth={true}
-            endIcon={<Send />}
-            className={classes.button}
-          >
-            Contact Me
-          </Button>
-        </Box>
-      </Grid>
-    </Box>
+    <motion.div exit={{ opacity: 0 }}>
+      <motion.div initial="initial" animate="animate" variants={content}>
+        <motion.section variants={elements}>
+          <Box component="div" className={classes.contactContainer}>
+            <Grid container justify="center">
+              <Box component="form" className={classes.form}>
+                <Typography variant="h5" className={classes.heading}>
+                  Hire or Contact me...
+                </Typography>
+                <InputField
+                  fullWidth={true}
+                  label="Name"
+                  variant="outlined"
+                  inputProps={{ className: classes.input }}
+                />
+                <InputField
+                  fullWidth={true}
+                  label="Email"
+                  variant="outlined"
+                  inputProps={{ className: classes.input }}
+                />
+                <InputField
+                  fullWidth={true}
+                  label="Message"
+                  variant="outlined"
+                  multiline
+                  rows={4}
+                  inputProps={{ className: classes.input }}
+                />
+                <Button
+                  variant="outlined"
+                  fullWidth={true}
+                  endIcon={<Send />}
+                  className={classes.button}
+                >
+                  Contact Me
+                </Button>
+              </Box>
+            </Grid>
+          </Box>
+        </motion.section>
+      </motion.div>
+    </motion.div>
   );
 };
 
