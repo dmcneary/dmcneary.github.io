@@ -16,12 +16,13 @@ function App() {
   const location = useLocation();
   const [isFirstMount, setIsFirstMount] = useState(true);
   const didMount = useRef(false);
+  const checkMount = didMount.current;
   useEffect(() => {
     return () => {
       didMount.current && setIsFirstMount(false);
       didMount.current = true;
     }
-    },[didMount.current]);
+    },[checkMount]);
 
   return (
     <ThemeProvider theme={theme}>

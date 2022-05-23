@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   input: {
     color: "#fff",
+    margin: "1rem 0"
   },
   button: {
     marginTop: "1rem",
@@ -47,6 +48,7 @@ const InputField = withStyles({
       color: "tan",
     },
     "& .MuiOutlinedInput-root": {
+      margin: "0.75rem 0",
       "& fieldset": {
         borderColor: "tan",
       },
@@ -95,7 +97,7 @@ const Contact = () => {
       <motion.div initial="initial" animate="animate" variants={content}>
         <motion.section variants={elements}>
           <Box component="div" className={classes.contactContainer}>
-            <Grid container justify="center">
+            <Grid container sx={{justifyContent: "center", alignItems: "center"}}>
               <Box component="form" className={classes.form} ref={form}>
                 <Typography variant="h5" className={classes.heading}>
                   Let's build together!

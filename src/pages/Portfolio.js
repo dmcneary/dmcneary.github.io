@@ -94,7 +94,7 @@ const Portfolio = () => {
       <motion.div initial="initial" animate="animate" variants={content}>
         <motion.section variants={elements}>
           <Box component="div" className={classes.mainContainer}>
-            <Grid container justify="center">
+            <Grid container sx={{justifyContent: "center", alignItems: "center"}}>
               {/* Projects */}
               {projects.map((project, i) => (
                 <Grid item xs={12} sm={8} md={4} key={i}>
