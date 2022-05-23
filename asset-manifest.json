@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a859563c.css",
+    "main.js": "/static/js/main.1c015b17.js",
+    "static/js/787.a2cb61a6.chunk.js": "/static/js/787.a2cb61a6.chunk.js",
+    "static/media/greats.png": "/static/media/greats.dc48676486f75475a4e7.png",
+    "static/media/bg.jpg": "/static/media/bg.f0116ce3cccf26c261c2.jpg",
+    "static/media/fit-monkeys.jpg": "/static/media/fit-monkeys.1a9f397545df6f40f95f.jpg",
+    "static/media/tripleclick.png": "/static/media/tripleclick.c7e469b81080150629ee.png",
+    "static/media/scraper.JPG": "/static/media/scraper.5ead9bd35e236ce3b176.JPG",
+    "static/media/profilepicture.png": "/static/media/profilepicture.88001bce0734b1f1c5b1.png",
+    "static/media/bamazon.JPG": "/static/media/bamazon.18e58cde5a90204a029c.JPG",
+    "static/media/books.png": "/static/media/books.325905558dcf067df9f9.png",
+    "index.html": "/index.html",
+    "main.a859563c.css.map": "/static/css/main.a859563c.css.map",
+    "main.1c015b17.js.map": "/static/js/main.1c015b17.js.map",
+    "787.a2cb61a6.chunk.js.map": "/static/js/787.a2cb61a6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a859563c.css",
+    "static/js/main.1c015b17.js"
+  ]
+}
