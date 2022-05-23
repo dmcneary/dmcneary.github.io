@@ -3,12 +3,12 @@ import { makeStyles } from "@mui/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { motion } from "framer-motion";
 import project1 from "../images/fit-monkeys.jpg";
 import project2 from "../images/books.png";
@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
   cardContainer: {
-    maxWidth: 345,
+    maxWidth: 400,
+    height: "auto",
     margin: "3rem auto",
   },
 }));
@@ -31,50 +32,40 @@ const useStyles = makeStyles((theme) => ({
 const projects = [
   {
     name: "Fit Monkeys",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
-    consequatur magni quod nesciunt necessitatibus molestiae non
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus
-    iste alias sunt veritatis nisi dolores!`,
+    description: "A fitness tracking app using Leaflet with the MERN stack",
+    github: "fit-monkeys",
     image: project1,
   },
   {
     name: "Google Books Search",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
+    description: "A MERN app to search for books using the Google Books API",
+    github: "google-books-list",
     image: project2,
   },
   {
     name: "Bamazon",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
+    description:
+      "A CLI to simulate purchasing bike parts, using Node and MySQL",
+    github: "bamazon-cli",
     image: project3,
   },
   {
     name: "12 Cycling Greats",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
+    description: "A memory game using React",
+    github: "12-cycling-greats",
     image: project4,
   },
   {
     name: "TripleClick",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
+    description: "A full-stack e-commerce app using the PERN stack with MUI.",
+    github: "tripleclick",
     image: project5,
   },
   {
     name: "AP News Scraper",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
+    description:
+      "An article aggregation app scraping from the AP newswire, using Handlebars.js, Cheerio.js, and MongoDB.",
+    github: "news-scraper",
     image: project6,
   },
 ];
@@ -108,11 +99,10 @@ const Portfolio = () => {
               {projects.map((project, i) => (
                 <Grid item xs={12} sm={8} md={4} key={i}>
                   <Card className={classes.cardContainer}>
-                    <CardActionArea>
+                    
                       <CardMedia
                         component="img"
-                        alt="Project 1"
-                        height="140"
+                        alt={"Project " + i}
                         image={project.image}
                       />
                       <CardContent>
@@ -123,14 +113,18 @@ const Portfolio = () => {
                           {project.description}
                         </Typography>
                       </CardContent>
-                    </CardActionArea>
+                    
                     <CardActions>
-                      <Button size="small" color="primary">
-                        Share
-                      </Button>
-                      <Button size="small" color="primary">
-                        Live Demo
-                      </Button>
+                      <a
+                        href={
+                          "https://www.github.com/dmcneary/" + project.github
+                        }
+                      >
+                        <GitHubIcon />
+                        <Button size="small" color="primary">
+                          View on GitHub
+                        </Button>
+                      </a>
                     </CardActions>
                   </Card>
                 </Grid>
