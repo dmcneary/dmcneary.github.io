@@ -3,20 +3,20 @@ import { motion } from "framer-motion";
 import "./InitialTransition.css";
 
 const blackBox = {
-    initial: {
-      height: "100%",
-      bottom: 0,
+  initial: {
+    height: "100%",
+    bottom: 0,
+  },
+  animate: {
+    height: 0,
+    transition: {
+      when: "afterChildren",
+      duration: 1.5,
+      ease: [0.87, 0, 0.13, 1],
     },
-    animate: {
-      height: 0,
-      transition: {
-        when: "afterChildren",
-        duration: 1.5,
-        ease: [0.87, 0, 0.13, 1],
-      },
-    },
-  };
-  
+  },
+};
+
 
 const textContainer = {
   initial: {
@@ -45,8 +45,8 @@ const text = {
 };
 
 const InitialTransition = () => {
-   // Scroll user to top to avoid showing the footer
-   React.useState(() => {
+  // Scroll user to top to avoid showing the footer
+  React.useState(() => {
     typeof windows !== "undefined" && window.scrollTo(0, 0);
   }, []);
 
@@ -56,10 +56,12 @@ const InitialTransition = () => {
       initial="initial"
       animate="animate"
       variants={blackBox}
-      onAnimationStart={() => document.body.classList.add("overflow-hidden")}
-      onAnimationComplete={() =>
+      onAnimationStart={() => {
+        document.body.classList.add("overflow-hidden")
+      }}
+      onAnimationComplete={() => {
         document.body.classList.remove("overflow-hidden")
-      }
+      }}
     >
       <motion.svg variants={textContainer} className="blackbox-text">
         <pattern

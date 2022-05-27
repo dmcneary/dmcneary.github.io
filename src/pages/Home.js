@@ -12,13 +12,14 @@ import InitialTransition from "../components/InitialTransition";
 const Home = ({ isFirstMount }) => {
   return (
     <motion.section exit={{ opacity: 0 }}>
-       {isFirstMount && <InitialTransition />}
-      <Particles />
+
       <motion.div
         initial="initial"
         animate="animate"
         variants={content(isFirstMount)}
       >
+        {isFirstMount && <InitialTransition />}
+        <Particles />
         <motion.section variants={elements}>
           <Box
             sx={{
