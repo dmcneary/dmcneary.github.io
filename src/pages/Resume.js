@@ -164,10 +164,12 @@ const Resume = () => {
                   align="center"
                   className={classes.subtitle1}
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                  quas ipsa, laudantium totam perferendis possimus voluptatibus
-                  tenetur. Quasi voluptatibus, nam vitae eaque ad, officia
-                  laboriosam repudiandae, rerum necessitatibus nisi mollitia.
+                  <ul>
+                    <li>Maintained travel agent portal using Ruby on Rails (10k+ users)</li>
+                    <li>Migrated company webpage from Wordpress to React</li>
+                    <li>Cleaned and mitigated malware attacks; hardened security on Wordpress websites</li>
+                    <li>Automated custom video rendering and distribution using Node.js and Adobe products</li>
+                  </ul>
                 </Typography>
               </Box>
               <Box component="div" className={classes.timeLineItem}>
