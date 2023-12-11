@@ -12,25 +12,23 @@ const useStyles = makeStyles((theme) => ({
 	timeLine: {
 		position: "relative",
 		padding: "1rem",
-		margin: "o auto",
-		"&:before": {
-			content: "''",
-			position: "absolute",
-			height: "100%",
-			border: "1px solid tan",
-			right: "40px",
-			top: 0,
-		},
-		"&:after": {
+		margin: "0 auto",
+
+		/*"&:after": {
 			content: "''",
 			display: "table",
 			clear: "both",
-		},
+		},*/
 		[theme.breakpoints.up("md")]: {
 			padding: "2rem",
 			"&:before": {
+				content: "''",
+				position: "absolute",
+				height: "100%",
+				border: "1px solid tan",
+				right: "50vw",
+				top: 0,
 				left: "calc(50% - 1px)",
-				right: "auto",
 			},
 		},
 	},
@@ -38,12 +36,15 @@ const useStyles = makeStyles((theme) => ({
 	timeLineYear: {
 		textAlign: "center",
 		maxWidth: "9.375rem",
-		margin: "0 3rem 0 auto",
+		margin: "0 auto",
 		fontSize: "1.8rem",
 		color: "#fff",
 		background: "tomato",
 		lineHeight: 1,
+		borderRadius: "50%",
 		padding: "0.5rem 1rem",
+		position: "relative",
+		clear: "both",
 		"&:before": {
 			display: "none",
 		},
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	heading: {
 		color: "tomato",
-		padding: "3rem 0",
+		padding: "3rem 0 0",
 		textTransform: "uppercase",
 	},
 }));
@@ -85,16 +86,30 @@ const content = {
 
 const jobsByYear = [
 	{
+		year: 2023,
+		roles: [
+			{
+				area: "Web Development",
+				company: "JAKKS Pacific Inc.",
+				desc: [
+					"Migrated company webpage and product catalog content from vanilla PHP into Wordpress, reducing lead times from days to minutes for new web content by using datasheet imports",
+					"Currently designing and implementing unified UI for product catalog and e-commerce stores with Wordpress and Shopify headless CMSs",
+					'Improved GTMetrix performance score from "C" to "A" by implementing caching techniques',
+					"Reduced CDN and WAF costs by 52 percent by integrating with Cloudflare"
+				]
+			}
+		]
+	},
+	{
 		year: 2022,
 		roles: [
 			{
 				area: "Web Development",
 				company: "Archer Travel Service",
 				desc: [
-					"Maintained travel agent portal using Ruby on Rails (10k+ users)",
-					"Migrated company webpage from Wordpress to React",
-					"Cleaned and mitigated malware attacks; hardened security on Wordpress websites",
-					"Automated custom video rendering and distribution using Node.js and Adobe products"
+					"Fielded support requests and bug reports for travel agent portals, built on Ruby on Rails and Wordpress (10k+ users)",
+					"Recovered compromised WHM, neutralized webshells, and further hardened Wordpress security",
+					"Proof of concept for automated custom video rendering and distribution using AWS, Adobe CC, and Node.js; improved asset request turnaround time to 24 hours from 2 weeks"
 				]
 			},
 		]
@@ -106,18 +121,18 @@ const jobsByYear = [
 				area: "IT Support",
 				company: "Tseng College at Cal State Northridge",
 				desc: [
-					"Assisted staff with new software installations and updates",
-					"Deployed and configure new hardware assets",
-					"Migrated workspaces from remote to on-campus environments"
+					"Resolved service requests and software deployments using ServiceNow for 100+ users",
+					"Configured and deployed 40+ unit refresh of new laptop assets using SCCM",
+					"Performed repairs on projectors, printers, and computer equipment reducing downtime by 50 percent"
 				]
 			},
 			{
 				area: "Web Development",
 				company: "Santa Monica College",
 				desc: [
-					"Updated and organized assets via CMS",
-					"Automated asset migration processes using Node.js",
-					"Implemented custom features to vendor widgets using JavaScript"
+					"Updated and organized assets via OmniCMS",
+					"Automated asset migration processes using Node.js, eliminating need for manual entry and reducing projected completion timeline to 1-2 days from 1-2 weeks",
+					"Implemented custom accessibility features to CMS widgets in lieu of submitting request to vendor; previous requests took months for response"
 				]
 			},
 		]
@@ -127,7 +142,7 @@ const jobsByYear = [
 		roles: [
 			{
 				area: "Teaching Assistant",
-				company: "Trilogy Education Services",
+				company: "Trilogy Education Services (contract)",
 				desc: [
 					"Oversaw a cohort of 30+ students in a remote learning environment",
 					"Taught best practices in MERN stack web development",
@@ -136,7 +151,7 @@ const jobsByYear = [
 			},
 			{
 				area: "IT Support",
-				company: "Los Angeles County Registrar/Recorder",
+				company: "Los Angeles County Registrar/Recorder (contract)",
 				desc: [
 					"Provided first-level onsite maintenance and support for 2020 Presidential election",
 					"Ensured proper chain of custody for election devices",
@@ -145,9 +160,10 @@ const jobsByYear = [
 			},
 			{
 				area: "Web Development",
-				company: "Think Electric",
+				company: "Think Electric (internship)",
 				desc: [
-					"Implemented updates with breaking changes to a 10-year old customized fork of open-source ERP software using Apache, Perl, PHP, and PostgreSQL"
+					"Fixed breaking changes and bugs in custom code while rebasing a 10 year old fork, using Perl and PostgreSQL",
+					"Learned ERP processes and SVN version control"
 				]
 			},
 		]
@@ -162,21 +178,24 @@ const Resume = () => {
 				<motion.section variants={elements}>
 					<Box component="header" className={classes.mainContainer}>
 						<Typography variant="h4" align="center" className={classes.heading}>
-							Experience
+							Resume
 						</Typography>
-						<Box component="div" className={classes.timeLine}>
-							{jobsByYear.map(el => (
-								<>
-									<Typography
-										variant="h2"
-										className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-									>
-										{el.year}
-									</Typography>
-									{el.roles.map(role => <ResumeItem data={role} />) }
-								</>
-							))}
-						</Box>
+						<Typography variant="body2" align="center" style={{ color: "tan" }}>
+							*Please note that prior to 2020, I was working in a different field and have omitted that experience from this resume. Contact me if you want to talk about bicycles!
+						</Typography>
+					<Box component="div" className={classes.timeLine}>
+						{jobsByYear.map(el => (
+							<>
+								<Typography
+									variant="h2"
+									className={`${classes.timeLineYear}`}
+								>
+									{el.year}
+								</Typography>
+								{el.roles.map(role => <ResumeItem className={`${classes.timeLineItem}`} data={role} />) }
+							</>
+						))}
+					</Box>
 					</Box>
 				</motion.section>
 			</motion.div>

@@ -6,30 +6,37 @@ import Box from "@mui/material/Box";
 const useStyles = makeStyles((theme) => ({
 	timeLineItem: {
     padding: "1rem",
-    borderBottom: "2px solid tan",
+		backgroundColor: "#333",
+		borderRadius: "15px",
+    /*borderBottom: "2px solid tan",*/
     position: "relative",
-    margin: "1rem 3rem 1rem 1rem",
+    margin: "1rem 0",
     clear: "both",
+		"& ul": {
+			paddingInlineStart: "0px"
+		},
     "&:after": {
       content: "''",
       position: "absolute",
     },
-    "&:before": {
-      content: "''",
-      position: "absolute",
-      right: "-0.625rem",
-      top: "calc(50% - 5px)",
-      borderStyle: "solid",
-      borderColor: "tomato tomato transparent transparent",
-      borderWidth: "0.625rem",
-      transform: "rotate(45deg)",
-    },
     [theme.breakpoints.up("md")]: {
       width: "44%",
-      margin: "1rem",
+      margin: "2rem 0",
+			textAlign:"end",
+			"&:before": {
+				content: "''",
+				position: "absolute",
+				right: "-0.625rem",
+				top: "calc(50% - 5px)",
+				borderStyle: "solid",
+				borderColor: "tomato tomato transparent transparent",
+				borderWidth: "0.625rem",
+				transform: "rotate(45deg)",
+			},
       "&:nth-of-type(2n)": {
         float: "right",
-        margin: "1rem",
+				textAlign:"start",
+        margin: "2rem 0",
         borderColor: "tan",
       },
       "&:nth-of-type(2n):before": {
@@ -50,6 +57,17 @@ const useStyles = makeStyles((theme) => ({
   subtitle1: {
     color: "tan",
   },
+	descItem: {
+		listStyle: "none",
+		lineHeight: "1.15",
+		"& li": {
+			marginBottom: "1rem",
+			fontSize: "1rem",
+			[theme.breakpoints.down("sm")]: {
+				fontSize: "0.8rem",
+			},
+		},
+	},
 }))
 
 const ResumeItem = ({ data }) => {
@@ -58,24 +76,21 @@ const ResumeItem = ({ data }) => {
 		<Box component="div" className={classes.timeLineItem}>
 			<Typography
 				variant="h5"
-				align="center"
 				className={classes.subHeading}
 			>
 				{data.area}
 			</Typography>
 			<Typography
 				variant="body1"
-				align="center"
 				className={classes.body1}
 			>
 				{data.company}
 			</Typography>
 			<Typography
-				variant="subtitle1"
-				align="center"
+				variant="body1"
 				className={classes.subtitle1}
 			>
-				<ul>
+				<ul className={`${classes.descItem}`}>
 					{data.desc.map(item => <li>{item}</li>)}
 				</ul>
 			</Typography>
