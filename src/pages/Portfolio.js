@@ -23,10 +23,36 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
   cardContainer: {
-    maxWidth: 400,
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "stretch",
+		width: "clamp(300px, 100%, 500px)",
     height: "auto",
-    margin: "3rem auto",
+		margin: "0 auto",
+    padding: "3rem",
   },
+	card: {
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "space-between",
+		alignItems: "stretch",
+		height: "100%",
+		width: "100%",
+		"&:hover": {
+			transform: "scale(1.1)",
+			transition: "all 0.5s ease-in-out",
+		},
+		"&:not(:hover)": {
+			transform: "scale(1)",
+			transition: "all 0.5s ease-in-out",
+		}
+	},
+	heading: {
+		color: "tomato",
+		padding: "3rem 0",
+		textTransform: "uppercase",
+	},
+	
 }));
 
 const projects = [
@@ -94,11 +120,11 @@ const Portfolio = () => {
       <motion.div initial="initial" animate="animate" variants={content}>
         <motion.section variants={elements}>
           <Box component="div" className={classes.mainContainer}>
-            <Grid container sx={{justifyContent: "center", alignItems: "center"}}>
+            <Grid container sx={{justifyContent: "center", alignItems: "stretch"}}>
               {/* Projects */}
               {projects.map((project, i) => (
-                <Grid item xs={12} sm={8} md={4} key={i}>
-                  <Card className={classes.cardContainer}>
+                <Grid className={classes.cardContainer} item xs={12} sm={8} md={4} key={i}>
+                  <Card className={classes.card}>
                     
                       <CardMedia
                         component="img"

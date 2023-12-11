@@ -7,20 +7,19 @@ import Typed from "react-typed";
 import ProfPic from "../images/profilepicture.png";
 import Particles from "../components/Particles";
 import { motion } from "framer-motion";
-/* removing blackbox transition for now
+
 import InitialTransition from "../components/InitialTransition";
-{isFirstMount && <InitialTransition />}
-*/
+
+
 const Home = ({ isFirstMount }) => {
   return (
     <motion.section exit={{ opacity: 0 }}>
-
       <motion.div
         initial="initial"
         animate="animate"
         variants={content(isFirstMount)}
       >
-        
+        {isFirstMount && <InitialTransition />}
         <Particles />
         <motion.section variants={elements}>
           <Box
