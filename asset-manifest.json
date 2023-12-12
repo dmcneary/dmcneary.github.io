@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d80d5ee2.css",
-    "main.js": "/static/js/main.fdc6714d.js",
-    "static/js/787.a2cb61a6.chunk.js": "/static/js/787.a2cb61a6.chunk.js",
+    "main.css": "/static/css/main.a859563c.css",
+    "main.js": "/static/js/main.30194474.js",
     "static/media/greats.png": "/static/media/greats.dc48676486f75475a4e7.png",
     "static/media/bg.jpg": "/static/media/bg.f0116ce3cccf26c261c2.jpg",
     "static/media/fit-monkeys.jpg": "/static/media/fit-monkeys.1a9f397545df6f40f95f.jpg",
@@ -12,12 +11,11 @@
     "static/media/bamazon.JPG": "/static/media/bamazon.18e58cde5a90204a029c.JPG",
     "static/media/books.png": "/static/media/books.325905558dcf067df9f9.png",
     "index.html": "/index.html",
-    "main.d80d5ee2.css.map": "/static/css/main.d80d5ee2.css.map",
-    "main.fdc6714d.js.map": "/static/js/main.fdc6714d.js.map",
-    "787.a2cb61a6.chunk.js.map": "/static/js/787.a2cb61a6.chunk.js.map"
+    "main.a859563c.css.map": "/static/css/main.a859563c.css.map",
+    "main.30194474.js.map": "/static/js/main.30194474.js.map"
   },
   "entrypoints": [
-    "static/css/main.d80d5ee2.css",
-    "static/js/main.fdc6714d.js"
+    "static/css/main.a859563c.css",
+    "static/js/main.30194474.js"
   ]
 }
