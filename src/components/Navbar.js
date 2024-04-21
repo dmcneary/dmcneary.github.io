@@ -65,8 +65,8 @@ const Navbar = () => {
             <IconButton onClick={() => setOpen(true)}>
               <Menu sx={ {color: "tomato"} } />
             </IconButton>
-            <Typography sx={ {color: "tan"} } variant="h5">
-              Menu
+            <Typography sx={ {color: "tan", marginLeft: "1rem", fontSize: "2rem"} } variant="h1">
+              David McNeary
             </Typography>
           </Toolbar>
         </AppBar>

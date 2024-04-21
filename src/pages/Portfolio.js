@@ -9,158 +9,207 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { motion } from "framer-motion";
-import project1 from "../images/fit-monkeys.jpg";
-import project2 from "../images/books.png";
-import project3 from "../images/bamazon.JPG";
-import project4 from "../images/greats.png";
-import project5 from "../images/tripleclick.png";
-import project6 from "../images/scraper.JPG";
+import LinkIcon from '@mui/icons-material/Link';
+import jakksImg from "../images/jakks.webp";
+import archerImg from "../images/archer.webp";
+import fitImg from "../images/fit-monkeys.webp";
+import bamImg from "../images/bamazon.webp";
+import bikeImg from "../images/12-cycling-greats.webp";
+import tripImg from "../images/tripleclick.webp";
 
 const useStyles = makeStyles((theme) => ({
-  mainContainer: {
-    background: "#233",
-    height: "100%",
-  },
-  cardContainer: {
+	mainContainer: {
+		maxWidth: "80%",
+		margin: "0 auto",
+	},
+	headerContainer: {
+		background: "#233",
+		height: "100%",
+		marginTop: "1rem",
+		padding: "1rem",
+		border: "10px solid tan",
+		borderRadius: "1rem",
+	},
+	cardContainer: {
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "stretch",
+		maxHeight: "100vh",
 		width: "clamp(300px, 100%, 500px)",
-    height: "auto",
+		height: "auto",
 		margin: "0 auto",
-    padding: "3rem",
-  },
+		padding: "3rem",
+	},
 	card: {
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "space-between",
 		alignItems: "stretch",
 		height: "100%",
+		maxHeight: "max-content",
 		width: "100%",
-		"&:hover": {
-			transform: "scale(1.1)",
-			transition: "all 0.5s ease-in-out",
+		"& img": {
+			objectFit: "contain",
 		},
-		"&:not(:hover)": {
-			transform: "scale(1)",
-			transition: "all 0.5s ease-in-out",
-		}
 	},
 	heading: {
 		color: "tomato",
 		padding: "3rem 0",
 		textTransform: "uppercase",
+		display: "block",
 	},
-	
+	sectionHeading: {
+		color: "tan",
+		padding: "2rem 1rem",
+		display: "inline-block",
+		backgroundColor: "#333",
+		borderRadius: "1rem",
+		position: "relative",
+		margin: "1rem",
+		border: "10px solid tomato",
+	},
+
 }));
 
-const projects = [
-  {
-    name: "Fit Monkeys",
-    description: "A fitness tracking app using Leaflet with the MERN stack",
-    github: "fit-monkeys",
-    image: project1,
-  },
-  {
-    name: "Google Books Search",
-    description: "A MERN app to search for books using the Google Books API",
-    github: "google-books-list",
-    image: project2,
-  },
-  {
-    name: "Bamazon",
-    description:
-      "A CLI to simulate purchasing bike parts, using Node and MySQL",
-    github: "bamazon-cli",
-    image: project3,
-  },
-  {
-    name: "12 Cycling Greats",
-    description: "A memory game using React",
-    github: "12-cycling-greats",
-    image: project4,
-  },
-  {
-    name: "TripleClick",
-    description: "A full-stack e-commerce app using the PERN stack with MUI.",
-    github: "tripleclick",
-    image: project5,
-  },
-  {
-    name: "AP News Scraper",
-    description:
-      "An article aggregation app scraping from the AP newswire, using Handlebars.js, Cheerio.js, and MongoDB.",
-    github: "news-scraper",
-    image: project6,
-  },
+const websites = [
+	{
+		name: "JAKKS Pacific",
+		description: "A website for a leading toy manufacturer which features a product catalog, corporate information, and customer service resources.",
+		url: "https://jakks.com",
+		image: jakksImg,
+	},
+	{
+		name: "Archer Sports Travel",
+		description: "Travel info and booking for youth sports teams in the Los Angeles area.",
+		url: "https://archersportstravel.com",
+		image: archerImg,
+	},
 ];
 
-const elements = {
-  initial: { opacity: 0 },
-  animate: {
-    opacity: 1,
-    transition: {
-      duration: 0.7,
-      ease: [0.6, -0.05, 0.01, 0.99],
-    },
-  },
-};
-
-const content = {
-  animate: {
-    transition: { staggerChildren: 0.1 },
-  },
-};
+const projects = [
+	{
+		name: "Fit Monkeys",
+		description: "A fitness tracking app using Leaflet with React, Express, MongoDB, and Node.js.",
+		github: "fit-monkeys",
+		url: null,
+		image: fitImg,
+	},
+	{
+		name: "Bamazon",
+		description:
+			"A Node.js + MySQL CLI to simulate purchasing bike parts",
+		github: "bamazon-cli",
+		url: null,
+		image: bamImg,
+	},
+	{
+		name: "12 Cycling Greats",
+		description: "A memory game using React and TailwindCSS",
+		github: "12-cycling-greats",
+		url: "https://mcneary.tech/12-cycling-greats",
+		image: bikeImg,
+	},
+	{
+		name: "TripleClick",
+		description: "A full-stack e-commerce app using MUI with React, Postgres, Express, and Node.js.",
+		github: "tripleclick",
+		url: null,
+		image: tripImg,
+	},
+];
 
 const Portfolio = () => {
-  const classes = useStyles();
-  return (
-    <motion.div exit={{ opacity: 0 }}>
-      <motion.div initial="initial" animate="animate" variants={content}>
-        <motion.section variants={elements}>
-          <Box component="div" className={classes.mainContainer}>
-            <Grid container sx={{justifyContent: "center", alignItems: "stretch"}}>
-              {/* Projects */}
-              {projects.map((project, i) => (
-                <Grid className={classes.cardContainer} item xs={12} sm={8} md={4} key={i}>
-                  <Card className={classes.card}>
-                    
-                      <CardMedia
-                        component="img"
-                        alt={"Project " + i}
-                        image={project.image}
-                      />
-                      <CardContent>
-                        <Typography variant="h5" gutterBottom>
-                          {project.name}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary">
-                          {project.description}
-                        </Typography>
-                      </CardContent>
-                    
-                    <CardActions>
-                      <a
-                        href={
-                          "https://www.github.com/dmcneary/" + project.github
-                        }
-                      >
-                        <GitHubIcon />
-                        <Button size="small" color="primary">
-                          View on GitHub
-                        </Button>
-                      </a>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
-        </motion.section>
-      </motion.div>
-    </motion.div>
-  );
+	const classes = useStyles();
+	return (
+		<Box component="main" className={classes.mainContainer}>
+			<Box component="header" className={classes.headerContainer}>
+				<Typography className={classes.heading} variant="h2">
+					My Portfolio
+				</Typography>
+			</Box>
+			<div className={classes.sectionHeading}>
+				<Typography variant="h3">
+					Websites
+				</Typography>
+			</div>
+			
+			<Grid container sx={{ justifyContent: "center", alignItems: "stretch", maxHeight: "100vh"}}>
+				{/* Websites */}
+				{websites.map((site, i) => (
+					<Grid className={classes.cardContainer} item xs={12} sm={8} md={6} key={i}>
+						<Card className={classes.card}>
+							<CardMedia
+								component="img"
+								alt={site.name}
+								image={site.image}
+								sx={{objectFit: "contain", maxHeight: "70%"}}
+							/>
+							<CardContent>
+								<Typography variant="h5" gutterBottom>
+									{site.name}
+								</Typography>
+								<Typography variant="body2" color="textSecondary">
+									{site.description}
+								</Typography>
+							</CardContent>
+							<CardActions sx={{alignItems: "center", margin: "0 auto"}}>
+								<a href={site.url} target="_blank" rel="noreferrer">
+									<LinkIcon />
+									<Button size="small" color="primary">
+										View website
+									</Button>
+								</a>
+							</CardActions>
+						</Card>
+					</Grid>
+				))}
+			</Grid>
+			<div className={classes.sectionHeading}>
+				<Typography variant="h3">
+					Projects
+				</Typography>
+			</div>
+			
+			<Grid container sx={{ justifyContent: "center", alignItems: "stretch"}}>
+				{/* Projects */}
+				{projects.map((project, i) => (
+					<Grid className={classes.cardContainer} item xs={12} sm={8} md={6} key={i}>
+						<Card className={classes.card}>
+							<CardMedia
+								component="img"
+								alt={project.name}
+								image={project.image}
+							/>
+							<CardContent>
+								<Typography variant="h5" gutterBottom>
+									{project.name}
+								</Typography>
+								<Typography variant="body2" color="textSecondary">
+									{project.description}
+								</Typography>
+							</CardContent>
+							<CardActions sx={{margin: "0 auto"}}>
+								{project.url &&
+									<a href={project.url} target="_blank" rel="noreferrer">
+										<LinkIcon />
+										<Button size="small" color="primary">
+											View website
+										</Button>
+									</a>}
+								{project.github &&
+									<a href={`https://www.github.com/dmcneary/${project.github}`}>
+										<GitHubIcon />
+										<Button size="small" color="primary">
+											View on GitHub
+										</Button>
+									</a>}
+							</CardActions>
+						</Card>
+					</Grid>
+				))}
+			</Grid>
+		</Box>
+	);
 };
 
 export default Portfolio;

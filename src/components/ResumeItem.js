@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "1rem",
 		backgroundColor: "#333",
 		borderRadius: "15px",
-    /*borderBottom: "2px solid tan",*/
+		border: "10px solid tomato",
     position: "relative",
     margin: "1rem 0",
     clear: "both",
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       width: "44%",
       margin: "2rem 0",
-			textAlign:"end",
+			textAlign:"start",
 			"&:before": {
 				content: "''",
 				position: "absolute",
@@ -31,13 +31,12 @@ const useStyles = makeStyles((theme) => ({
 				borderStyle: "solid",
 				borderColor: "tomato tomato transparent transparent",
 				borderWidth: "0.625rem",
-				transform: "rotate(45deg)",
+				transform: "rotate(45deg) scale(2)",
 			},
       "&:nth-of-type(2n)": {
         float: "right",
 				textAlign:"start",
         margin: "2rem 0",
-        borderColor: "tan",
       },
       "&:nth-of-type(2n):before": {
         right: "auto",

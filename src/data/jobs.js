@@ -1,6 +1,6 @@
 export default [
 	{
-		year: 2023,
+		year: "Present",
 		roles: [
 			{
 				area: "Web Development",

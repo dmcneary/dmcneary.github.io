@@ -3,14 +3,20 @@ import { makeStyles } from "@mui/styles";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import ResumeItem from "../components/ResumeItem";
-import { motion } from "framer-motion";
 import jobsByYear from "../data/jobs";
 
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
+		maxWidth: "80%",
+		margin: "0 auto",
+	},
+	headerContainer: {
 		background: "#233",
+		height: "100%",
+		marginTop: "1rem",
 		padding: "1rem",
-		textAlign: "start",
+		border: "10px solid tan",
+		borderRadius: "1rem",
 	},
 	timeLine: {
 		position: "relative",
@@ -34,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 	},
-	
 	timeLineYear: {
 		textAlign: "center",
 		maxWidth: "9.375rem",
@@ -44,8 +49,8 @@ const useStyles = makeStyles((theme) => ({
 		background: "tomato",
 		lineHeight: 1,
 		borderRadius: "50%",
-		border: "0.3em solid tan",
-		
+		border: "0.1em solid tan",
+
 		padding: "0.5rem 1rem",
 		position: "relative",
 		clear: "both",
@@ -62,57 +67,41 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 	},
+	timeLineItem: {
+		border: "10px solid tomato",
+	},
 	heading: {
 		color: "tomato",
+		padding: "3rem 0",
 		textTransform: "uppercase",
+		display: "block",
 	},
 }));
-
-const elements = {
-	initial: { opacity: 0 },
-	animate: {
-		opacity: 1,
-		transition: {
-			duration: 0.7,
-			ease: [0.6, -0.05, 0.01, 0.99],
-		},
-	},
-};
-
-const content = {
-	animate: {
-		transition: { staggerChildren: 0.1 },
-	},
-};
 
 const Resume = () => {
 	const classes = useStyles();
 	return (
-		<motion.div exit={{ opacity: 0 }}>
-			<motion.div initial="initial" animate="animate" variants={content}>
-				<motion.section variants={elements}>
-					<Box component="header" className={classes.mainContainer}>
-						<Typography variant="h4" className={classes.heading}>
-							My resume
+		<Box component="main" className={classes.mainContainer}>
+			<Box component="header" className={classes.headerContainer}>
+			<Typography className={classes.heading} sx={{display: "block"}} variant="h2" gutterBottom>
+				My Resume
+			</Typography>
+			<Typography variant="body2" style={{ color: "tan" }}>
+				* Please note that prior to 2020, I was working in a different field and have omitted that experience from this resume. Feel free to contact me if you want to talk about bicycles!
+			</Typography>
+			</Box>
+			<Box component="main" className={classes.timeLine}>
+				{jobsByYear.map(el => (
+					<>
+						<Typography variant="h2" className={`${classes.timeLineYear}`}>
+							{el.year}
 						</Typography>
-						<Typography variant="body2" style={{ color: "tan" }}>
-							* Please note that prior to 2020, I was working in a different field and have omitted that experience from this resume. Contact me if you want to talk about bicycles!
-						</Typography>
-					</Box>
-					<Box component="main" className={classes.timeLine}>
-						{jobsByYear.map(el => (
-							<>
-								<Typography variant="h2" className={`${classes.timeLineYear}`}>
-									{el.year}
-								</Typography>
-								{el.roles.map(role => <ResumeItem className={`${classes.timeLineItem}`} data={role} />) }
-							</>
-						))}
-					
-					</Box>
-				</motion.section>
-			</motion.div>
-		</motion.div>
+						{el.roles.map(role => <ResumeItem className={`${classes.timeLineItem}`} data={role} />)}
+					</>
+				))}
+
+			</Box>
+		</Box>
 	);
 };
 
