@@ -1,30 +1,40 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { makeStyles, withStyles } from "@mui/styles";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
-import Button from "@mui/material/Button";
+import {
+	Box,
+	TextField,
+	Typography,
+	Button
+} from "@mui/material";
 import emailjs from '@emailjs/browser';
-
 import Send from "@mui/icons-material/Send";
 
 const useStyles = makeStyles((theme) => ({
-	contactContainer: {
-		background: "#233",
+	mainContainer: {
 		height: "100vh",
+		[theme.breakpoints.up('md')]: {
+			margin: "0 5vw 0 calc(15em + 5vw)",
+		},
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center"
+	},
+	contactContainer: {
+		overflow: "auto",
+		backgroundColor: "rgba(35,50,51,0.9)",
+		borderRadius: "1em",
+		padding: "1em",
+		height: "min-content",
+		width: "90vw",
+		[theme.breakpoints.up('md')]: {
+			width: "50vw",
+			padding: "2em",
+		},
 	},
 	heading: {
 		color: "tomato",
 		textAlign: "center",
-		textTransform: "uppercase",
 		marginBottom: "1rem",
-	},
-	form: {
-		top: "50%",
-		left: "50%",
-		transform: "translate(-50%, -50%)",
-		position: "absolute",
 	},
 	input: {
 		color: "#fff",
@@ -39,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
 
 const InputField = withStyles({
 	root: {
-		margin: "0.5rem 0",
 		"& label.Mui-focused": {
 			color: "tomato",
 		},
@@ -63,6 +72,7 @@ const InputField = withStyles({
 })(TextField);
 
 const Contact = () => {
+	const [sendSuccessful, setSendSuccessful] = useState(false);
 	const classes = useStyles();
 	const form = useRef();
 	const serviceId = process.env.REACT_APP_MAIL_SERVICE_ID;
@@ -71,13 +81,16 @@ const Contact = () => {
 
 	const sendEmail = (e) => {
 		e.preventDefault();
-		emailjs.sendForm(serviceId, templateId, form.current, pubKey);
+		emailjs.sendForm(serviceId, templateId, form.current, pubKey)
+		.then(res => {
+			(res.status === 200) ? setSendSuccessful(true) : setSendSuccessful(false);
+		});
 	};
 
 	return (
 
-		<Box component="main" className={classes.contactContainer}>
-			<Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
+		<Box component="main" className={classes.mainContainer}>
+			<Box className={classes.contactContainer} sx={{justifyContent: "center", alignItems: "center"}}>
 				<Box component="form" className={classes.form} ref={form}>
 					<Typography variant="h5" className={classes.heading}>
 						Let's build together!
@@ -106,8 +119,7 @@ const Contact = () => {
 						inputProps={{ className: classes.input }}
 					/>
 					<Button
-						variant="outlined"
-						fullWidth={true}
+						variant="contained"
 						endIcon={<Send />}
 						className={classes.button}
 						onClick={sendEmail}
@@ -115,7 +127,8 @@ const Contact = () => {
 						Contact Me
 					</Button>
 				</Box>
-			</Grid>
+				{sendSuccessful ? <Typography variant="h5" className={classes.heading}>Message sent!</Typography> : null}
+			</Box>
 		</Box>
 	)
 };

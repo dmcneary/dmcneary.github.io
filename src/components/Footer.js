@@ -1,18 +1,12 @@
 import React from "react";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-
-import GitHub from "@mui/icons-material/GitHub";
-import LinkedIn from "@mui/icons-material/LinkedIn";
-import File from "@mui/icons-material/FileDownload";
-/*import Instagram from "@mui/icons-material/Instagram";*/
+import { BottomNavigation, BottomNavigationAction } from "@mui/material";
+import { GitHub, LinkedIn, FileDownload } from "@mui/icons-material";
 
 const navButtonStyle = {
     "& .MuiSvgIcon-root": {
       fill: "tan",
       "&:hover": {
         fill: "tomato",
-        fontSize: "1.8rem",
       },
     },
   };
@@ -26,9 +20,8 @@ const Footer = () => (
       	<BottomNavigationAction icon={<LinkedIn />} sx={ navButtonStyle } />
 			</a>
 			<a href='/David_McNeary_resume.pdf'>
-				<BottomNavigationAction icon={<File />} sx={ navButtonStyle } />
+				<BottomNavigationAction icon={<FileDownload />} sx={ navButtonStyle } />
       </a>
-			{/*<BottomNavigationAction icon={<Instagram />} sx={ navButtonStyle } />*/}
     </BottomNavigation>
   );
 

@@ -6,17 +6,27 @@ import ResumeItem from "../components/ResumeItem";
 import jobsByYear from "../data/jobs";
 
 const useStyles = makeStyles((theme) => ({
-	mainContainer: {
-		maxWidth: "80%",
-		margin: "0 auto",
+	main: {
+		height: "100vh",
+		margin: "0",
+		[theme.breakpoints.up('md')]: {
+			margin: "0 5% 0 25%",
+		}
 	},
 	headerContainer: {
-		background: "#233",
-		height: "100%",
-		marginTop: "1rem",
-		padding: "1rem",
-		border: "10px solid tan",
-		borderRadius: "1rem",
+		marginTop: "10vh",
+		marginRight: "auto",
+		marginLeft: "auto",
+		overflow: "auto",
+		textAlign: "left",
+		backgroundColor: "rgba(35,50,51,0.9)",
+		borderRadius: "1em",
+		padding: "1em",
+		height: "min-content",
+		width: "90%",
+		[theme.breakpoints.up('md')]: {
+			padding: "2em",
+		},
 	},
 	timeLine: {
 		position: "relative",
@@ -48,9 +58,7 @@ const useStyles = makeStyles((theme) => ({
 		color: "#fff",
 		background: "tomato",
 		lineHeight: 1,
-		borderRadius: "50%",
-		border: "0.1em solid tan",
-
+		borderRadius: "1rem",
 		padding: "0.5rem 1rem",
 		position: "relative",
 		clear: "both",
@@ -72,23 +80,21 @@ const useStyles = makeStyles((theme) => ({
 	},
 	heading: {
 		color: "tomato",
-		padding: "3rem 0",
-		textTransform: "uppercase",
-		display: "block",
+		padding: "1rem 0"
 	},
 }));
 
 const Resume = () => {
 	const classes = useStyles();
 	return (
-		<Box component="main" className={classes.mainContainer}>
+		<Box component="main" className={classes.main}>
 			<Box component="header" className={classes.headerContainer}>
-			<Typography className={classes.heading} sx={{display: "block"}} variant="h2" gutterBottom>
-				My Resume
-			</Typography>
-			<Typography variant="body2" style={{ color: "tan" }}>
-				* Please note that prior to 2020, I was working in a different field and have omitted that experience from this resume. Feel free to contact me if you want to talk about bicycles!
-			</Typography>
+				<Typography className={classes.heading} sx={{ display: "block" }} variant="h2" gutterBottom>
+					My Resume
+				</Typography>
+				<Typography sx={{maxWidth: "50%"}} variant="body2" style={{ color: "tan" }}>
+					* Please note, I have omitted some prior experience from this resume. Feel free to contact me if you want to talk about bicycles!
+				</Typography>
 			</Box>
 			<Box component="main" className={classes.timeLine}>
 				{jobsByYear.map(el => (

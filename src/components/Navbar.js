@@ -1,81 +1,75 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Drawer from "@mui/material/Drawer";
-import Box from "@mui/material/Box";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Divider from "@mui/material/Divider";
-import Typography from "@mui/material/Typography";
+import {
+	Drawer,
+	AppBar,
+	Toolbar,
+	IconButton,
+	Typography
+} from "@mui/material";
 import Menu from "@mui/icons-material/Menu";
-import AssignmentInd from "@mui/icons-material/AssignmentInd";
-import Home from "@mui/icons-material/Home";
-import Apps from "@mui/icons-material/Apps";
-import ContactMail from "@mui/icons-material/ContactMail";
-import Footer from "../components/Footer";
-
-const menuItems = [
-  { listIcon: <Home />, listText: "Home", listPath: "/" },
-  { listIcon: <AssignmentInd />, listText: "Resume", listPath: "/resume" },
-  { listIcon: <Apps />, listText: "Portfolio", listPath: "/portfolio" },
-  { listIcon: <ContactMail />, listText: "Contact", listPath: "/contact" },
-];
+import DrawerMenu from "./DrawerMenu";
+import Footer from "./Footer";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const sideList = () => (
-    <Box component="div" sx={
-      {
-        width: 250,
-        background: "#511",
-        height: "100%",
-      }
-    } 
-    >
-      <Divider />
-      <List>
-        {menuItems.map((item, i) => (
-          <Link to={item.listPath} key={i}>
-            <ListItem
-              sx={ {color: "tan"} }
-              button
-              onClick={() => setOpen(false)}
-            >
-                <ListItemIcon sx={ {color: "tan" } }>
-                  {item.listIcon}
-                </ListItemIcon>
-                <ListItemText primary={item.listText} />
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-    </Box>
-  );
+	const drawer = (
+		<>
+			<Toolbar />
+			<DrawerMenu closeMenu={() => setMobileMenuOpen(false)}/>
+    	<Footer />
+		</>
+	);
 
   return (
-    <React.Fragment>
-      <Box component="nav">
-        <AppBar sx={ {background: "#222", margin: 0} } position="static">
-          <Toolbar>
-            <IconButton onClick={() => setOpen(true)}>
-              <Menu sx={ {color: "tomato"} } />
-            </IconButton>
-            <Typography sx={ {color: "tan", marginLeft: "1rem", fontSize: "2rem"} } variant="h1">
-              David McNeary
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </Box>
-      <Drawer open={open} anchor="left" onClose={() => setOpen(false)}>
-        {sideList()}
-        <Footer />
+    <>
+      <AppBar sx={ {background: "#222", padding: "0.1em", zIndex: (theme) => theme.zIndex.drawer + 1} } position="fixed">
+				<Toolbar>
+					<IconButton
+						sx={{display: {xs: "block", md: "none"}}}
+						onClick={() => setMobileMenuOpen(prev => !prev)}
+						aria-label="open drawer"
+					>
+						<Menu sx={{color: "tomato"}}/>
+					</IconButton>
+					<Typography sx={ {color: "tan", marginLeft: "1rem", fontSize: "calc(1em + 1vw)"} } variant="h1">
+						David McNeary
+					</Typography>
+				</Toolbar>
+      </AppBar>
+      <Drawer
+				variant="temporary"
+				ModalProps={{
+					keepMounted: true,
+				}}
+				sx={
+					{
+						display: {xs: "block", md: "none"},
+						width: "fit-content",
+						[`& .MuiDrawer-paper`]: { border: "0", width:"min-content", boxSizing: 'border-box' }
+					}
+				}
+				open={mobileMenuOpen}
+				anchor="left"
+				onClose={() => setMobileMenuOpen(false)}
+			>
+        {drawer}
       </Drawer>
-    </React.Fragment>
+			<Drawer
+				variant="permanent"
+				sx={
+					{
+						display: {xs: "none", md: "block"},
+						flexShrink: 0,
+						width: "min-content",
+						[`& .MuiDrawer-paper`]: { border: "0", width: "fit-content", boxSizing: 'border-box' }
+					}
+				}
+				open
+			>
+        {drawer}
+      </Drawer>
+    </>
   );
 };
 

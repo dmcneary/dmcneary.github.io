@@ -19,16 +19,24 @@ import tripImg from "../images/tripleclick.webp";
 
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
-		maxWidth: "80%",
+		height: "100vh",
 		margin: "0 auto",
+		[theme.breakpoints.up('md')]: {
+			margin: "0 5vw 0 calc(15em + 5vw)",
+		}
 	},
 	headerContainer: {
-		background: "#233",
-		height: "100%",
-		marginTop: "1rem",
-		padding: "1rem",
-		border: "10px solid tan",
-		borderRadius: "1rem",
+		margin: "10vh auto 2rem auto",
+		overflow: "auto",
+		textAlign: "left",
+		backgroundColor: "rgba(35,50,51,0.9)",
+		borderRadius: "1em",
+		padding: "0 1em",
+		height: "min-content",
+		width: "90%",
+		[theme.breakpoints.up('md')]: {
+			margin: "10vh 0 2rem 0",
+		},
 	},
 	cardContainer: {
 		display: "flex",
@@ -54,19 +62,17 @@ const useStyles = makeStyles((theme) => ({
 	},
 	heading: {
 		color: "tomato",
-		padding: "3rem 0",
-		textTransform: "uppercase",
-		display: "block",
+		padding: "1rem 0",
 	},
 	sectionHeading: {
 		color: "tan",
-		padding: "2rem 1rem",
-		display: "inline-block",
+		padding: "1rem 2rem",
 		backgroundColor: "#333",
+		opacity: 0.9,
 		borderRadius: "1rem",
 		position: "relative",
-		margin: "1rem",
-		border: "10px solid tomato",
+		margin: "0 auto",
+			width: "fit-content",
 	},
 
 }));
