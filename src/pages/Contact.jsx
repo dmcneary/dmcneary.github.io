@@ -36,15 +36,6 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: "center",
 		marginBottom: "1rem",
 	},
-	input: {
-		color: "#fff",
-		margin: "1rem 0"
-	},
-	button: {
-		marginTop: "1rem",
-		color: "tomato",
-		borderColor: "tan",
-	},
 }));
 
 const InputField = withStyles({
@@ -56,16 +47,20 @@ const InputField = withStyles({
 			color: "tan",
 		},
 		"& .MuiOutlinedInput-root": {
-			margin: "0.75rem 0",
+			"& .MuiOutlinedInput-input": {
+				color: "wheat",
+			},
+			"&.Mui-focused .MuiOutlinedInput-input": {
+				color: "peru",
+			},
 			"& fieldset": {
 				borderColor: "tan",
 			},
 			"&:hover fieldset": {
-				borderColor: "tan",
+				borderColor: "wheat",
 			},
 			"&.Mui-focused fieldset": {
-				color: "#fff",
-				borderColor: "tan",
+				borderColor: "peru",
 			},
 		},
 	},
@@ -73,8 +68,25 @@ const InputField = withStyles({
 
 const Contact = () => {
 	const [sendSuccessful, setSendSuccessful] = useState(false);
-	const classes = useStyles();
+	const [inputs, setInputs] = useState({
+		user_name: {
+			value: '',
+			error: false,
+			errorMsg: 'Please enter your name.'
+		},
+		user_email: {
+			value: '',
+			error: false,
+			errorMsg: 'Please enter a valid email address.'
+		},
+		message: {
+			value: '',
+			error: false,
+			errorMsg: 'Message cannot be blank.'
+		}
+	});
 	const form = useRef();
+	const classes = useStyles();
 	const serviceId = process.env.REACT_APP_MAIL_SERVICE_ID;
 	const templateId = process.env.REACT_APP_MAIL_TEMPLATE_ID;
 	const pubKey = process.env.REACT_APP_MAIL_PUBLIC_KEY;
@@ -87,41 +99,105 @@ const Contact = () => {
 		});
 	};
 
-	return (
+	const handleInputChange = (e) => {
+		const { name, value } = e.target;
+		setInputs({
+			...inputs,
+			[name]: {
+				...inputs[name],
+				value: value,
+				error: false
+			}
+		});
+	};
 
+	const handleInputBlur = (e) => {
+		const { name, value } = e.target;
+		let invalidValue = false;
+
+		if (name === 'user_email') {
+			const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+			invalidValue = !emailPattern.test(value);
+		} else {
+			invalidValue = value === '';
+		}
+
+		setInputs({
+			...inputs,
+			[name]: {
+				...inputs[name],
+				error: invalidValue
+			}
+		});
+		
+	}
+
+	return (
 		<Box component="main" className={classes.mainContainer}>
 			<Box className={classes.contactContainer} sx={{justifyContent: "center", alignItems: "center"}}>
-				<Box component="form" className={classes.form} ref={form}>
+				<Box component="form" ref={form} className={classes.form}>
 					<Typography variant="h5" className={classes.heading}>
 						Let's build together!
 					</Typography>
 					<InputField
-						fullWidth={true}
+						fullWidth
+						margin="normal"
 						label="Name"
 						name="user_name"
+						value={inputs.user_name.value}
+						onChange={handleInputChange}
+						onBlur={handleInputBlur}
 						variant="outlined"
+						required
 						inputProps={{ className: classes.input }}
+						error={inputs.user_name.error}
+						helperText={inputs.user_name.error ? inputs.user_name.errorMsg : null}
 					/>
 					<InputField
-						fullWidth={true}
+						fullWidth
+						margin="normal"
 						label="Email"
 						name="user_email"
+						value={inputs.user_email.value}
+						onChange={handleInputChange}
+						onBlur={handleInputBlur}
 						variant="outlined"
+						required
 						inputProps={{ className: classes.input }}
+						error={inputs.user_email.error}
+						helperText={inputs.user_email.error ? inputs.user_email.errorMsg : null}
 					/>
 					<InputField
-						fullWidth={true}
+						fullWidth
+						margin="normal"
 						label="Message"
 						name="message"
+						value={inputs.message.value}
+						onChange={handleInputChange}
+						onBlur={handleInputBlur}
 						variant="outlined"
+						required
 						multiline
 						rows={4}
 						inputProps={{ className: classes.input }}
+						error={inputs.message.error}
+						helperText={inputs.message.error ? inputs.message.errorMsg : null}
 					/>
 					<Button
 						variant="contained"
+						sx={{
+							marginTop: "1rem",
+							color: "tan",
+							fontWeight: "bold",
+							backgroundColor: "teal",
+							border: "2px solid tan",
+							"&:hover": {
+								backgroundColor: "tan",
+								color: "teal",
+								border: "2px solid teal"
+							}
+							}}
 						endIcon={<Send />}
-						className={classes.button}
 						onClick={sendEmail}
 					>
 						Contact Me
