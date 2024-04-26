@@ -19,14 +19,13 @@ import tripImg from "../images/tripleclick.webp";
 
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
-		height: "100vh",
-		margin: "0 auto",
+		margin: "5rem auto",
 		[theme.breakpoints.up('md')]: {
-			margin: "0 5vw 0 calc(15em + 5vw)",
+			margin: "2rem 5vw 0 calc(15em + 5vw)",
 		}
 	},
 	headerContainer: {
-		margin: "10vh auto 2rem auto",
+		margin: "0 auto 2rem auto",
 		overflow: "auto",
 		textAlign: "left",
 		backgroundColor: "rgba(35,50,51,0.9)",
@@ -42,11 +41,13 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		justifyContent: "center",
 		alignItems: "stretch",
-		maxHeight: "100vh",
-		width: "clamp(300px, 100%, 500px)",
 		height: "auto",
+		width: "clamp(300px, 100%, 500px)",
 		margin: "0 auto",
 		padding: "3rem",
+		[theme.breakpoints.up('md')]: {
+			maxHeight: "100vh"
+		},
 	},
 	card: {
 		display: "flex",
@@ -139,10 +140,10 @@ const Portfolio = () => {
 				</Typography>
 			</div>
 			
-			<Grid container sx={{ justifyContent: "center", alignItems: "stretch", maxHeight: "100vh"}}>
+			<Grid container sx={{lg:{flexDirection: "row", justifyContent: "center", alignItems: "stretch"}, xs: {flexDirection: "column", alignItems: "center"}}}>
 				{/* Websites */}
 				{websites.map((site, i) => (
-					<Grid className={classes.cardContainer} item xs={12} sm={8} md={6} key={i}>
+					<Grid className={classes.cardContainer} item xs={12} lg={6} key={i}>
 						<Card className={classes.card}>
 							<CardMedia
 								component="img"
@@ -160,7 +161,7 @@ const Portfolio = () => {
 							</CardContent>
 							<CardActions sx={{alignItems: "center", margin: "0 auto"}}>
 								<a href={site.url} target="_blank" rel="noreferrer">
-									<LinkIcon />
+									<LinkIcon sx={{verticalAlign: "middle"}}/>
 									<Button size="small" color="primary">
 										View website
 									</Button>
@@ -196,15 +197,15 @@ const Portfolio = () => {
 							</CardContent>
 							<CardActions sx={{margin: "0 auto"}}>
 								{project.url &&
-									<a href={project.url} target="_blank" rel="noreferrer">
-										<LinkIcon />
+									<a style={{verticalAlign: "bottom"}} href={project.url} target="_blank" rel="noreferrer">
+										<LinkIcon sx={{verticalAlign: "middle"}}/>
 										<Button size="small" color="primary">
 											View website
 										</Button>
 									</a>}
 								{project.github &&
 									<a href={`https://www.github.com/dmcneary/${project.github}`}>
-										<GitHubIcon />
+										<GitHubIcon sx={{verticalAlign: "middle"}}/>
 										<Button size="small" color="primary">
 											View on GitHub
 										</Button>

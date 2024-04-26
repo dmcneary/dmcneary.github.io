@@ -92,18 +92,18 @@ const Resume = () => {
 				<Typography className={classes.heading} sx={{ display: "block" }} variant="h2" gutterBottom>
 					My Resume
 				</Typography>
-				<Typography sx={{maxWidth: "50%"}} variant="body2" style={{ color: "tan" }}>
+				<Typography sx={{md: {maxWidth: "50%"}}} variant="body2" style={{ color: "tan" }}>
 					* Please note, I have omitted some prior experience from this resume. Feel free to contact me if you want to talk about bicycles!
 				</Typography>
 			</Box>
 			<Box component="main" className={classes.timeLine}>
 				{jobsByYear.map(el => (
-					<>
+					<React.Fragment key={el.year}>
 						<Typography variant="h2" className={`${classes.timeLineYear}`}>
 							{el.year}
 						</Typography>
-						{el.roles.map(role => <ResumeItem className={`${classes.timeLineItem}`} data={role} />)}
-					</>
+						{el.roles.map(role => <ResumeItem key={`${role.company}-${role.area}`}className={`${classes.timeLineItem}`} data={role} />)}
+					</React.Fragment>
 				))}
 
 			</Box>

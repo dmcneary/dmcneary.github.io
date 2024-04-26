@@ -86,14 +86,17 @@ const ResumeItem = ({ data }) => {
 			>
 				{data.company}
 			</Typography>
-			<Typography
-				variant="body1"
-				className={classes.subtitle1}
-			>
-				<ul className={`${classes.descItem}`}>
-					{data.desc.map(item => <li>{item}</li>)}
-				</ul>
-			</Typography>
+			<ul className={`${classes.descItem}`}>
+				{data.desc.map((item, i) => <li key={item}>
+					<Typography
+						variant="body1"
+						className={classes.subtitle1}
+					>
+						{item}
+					</Typography>
+				</li>)}
+			</ul>
+			
 		</Box>
 	)
 }

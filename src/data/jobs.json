@@ -1,0 +1,85 @@
+[
+	{
+		"year": "Present",
+		"roles": [
+			{
+				"area": "Web Development",
+				"company": "JAKKS Pacific Inc.",
+				"desc": [
+					"Migrated website and product catalog content from vanilla PHP into Wordpress CMS, slicing lead times for publishing new content from days to minutes via customized data import processing",
+					"Created reusable UI components using JavaScript, PHP, and Liquid",
+					"Improved web performance scores through front-end best practices and reduced time to first byte by 70 percent",
+					"Administered and secured back-end webserver using WHM/cPanel; Reduced CDN and WAF costs by 52 percent"
+				]
+			}
+		]
+	},
+	{
+		"year": 2022,
+		"roles": [
+			{
+				"area": "Web Development",
+				"company": "Archer Travel Service",
+				"desc": [
+					"Fielded support requests for 10k+ users and triaged bug reports for travel agent portals, built on Ruby on Rails and Wordpress",
+					"Recovered compromised WHM/cPanel, neutralized webshells, and further hardened Wordpress security",
+					"Automated custom video rendering and distribution using Node.js, ExtendScript, and AWS (S3, CloudFront, and SES); improved asset production time by 93 percent"
+				]
+			}
+		]
+	},
+	{
+		"year": 2021,
+		"roles": [
+			{
+				"area": "IT Support",
+				"company": "Tseng College at Cal State Northridge",
+				"desc": [
+					"Resolved service requests and software deployments on staff computers using ServiceNow",
+					"Configured and deployed 40+ unit refresh of new laptop assets",
+					"Conducted repairs on projectors, printers, and computer equipment; mitigated asset unavailability by performing service on-premesis"
+				]
+			},
+			{
+				"area": "Web Development",
+				"company": "Santa Monica College",
+				"desc": [
+					"Updated and organized content/assets for college website",
+					"Automated asset processing using Node.js, reducing projected completion timeline to 1-2 days from 1-2 weeks",
+					"Augmented Omni CMS widgets adding custom accessibility features; cut turnaround versus vendor request by months"
+				]
+			}
+		]
+	},
+	{
+		"year": 2020,
+		"roles": [
+			{
+				"area": "Teaching Assistant",
+				"company": "Trilogy Education Services (contract)",
+				"desc": [
+					"Oversaw a cohort of 30+ students in a remote learning environment",
+					"Taught best practices in MERN stack web development",
+					"Used Slack, Canvas, and Zoom  for student/staff coordination and web instruction"
+				]
+			},
+			{
+				"area": "IT Support",
+				"company": "Los Angeles County Registrar/Recorder (contract)",
+				"desc": [
+					"Provided first-level onsite maintenance and support for 2020 Presidential election",
+					"Ensured proper chain of custody for election devices",
+					"Coordinated with central help desk to prevent errors and outages"
+				]
+			},
+			{
+				"area": "Web Development",
+				"company": "Think Electric (internship)",
+				"desc": [
+					"Fixed breaking changes and bugs in custom code while rebasing a 10 year old fork of open-source accounting software, using Perl and PostgreSQL",
+					"Learned about ERP processes and SVN version control"
+				]
+			}
+		]
+	}
+]
