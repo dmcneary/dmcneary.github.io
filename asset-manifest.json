@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.2a255cbd.css",
-    "main.js": "/static/js/main.d0ce17f0.js",
-    "static/media/jakks.webp": "/static/media/jakks.5875133932aae0e5d208.webp",
+    "main.js": "/static/js/main.b0a103b0.js",
     "static/media/bg.jpg": "/static/media/bg.f0116ce3cccf26c261c2.jpg",
-    "static/media/archer.webp": "/static/media/archer.65b2630937eab9298d96.webp",
+    "static/media/jakks.webp": "/static/media/jakks.d05ccdb1a8cea9f40cb6.webp",
+    "static/media/archer.webp": "/static/media/archer.49afaa7ba24579e3e2ee.webp",
     "static/media/fit-monkeys.webp": "/static/media/fit-monkeys.979a6e5522b14499420c.webp",
     "static/media/12-cycling-greats.webp": "/static/media/12-cycling-greats.2674916418878936f3e2.webp",
     "static/media/profilepicture.webp": "/static/media/profilepicture.9a3f9ab2ac7042eb3656.webp",
@@ -12,10 +12,10 @@
     "static/media/bamazon.webp": "/static/media/bamazon.d93c9cfaa4cb1d3d0186.webp",
     "index.html": "/index.html",
     "main.2a255cbd.css.map": "/static/css/main.2a255cbd.css.map",
-    "main.d0ce17f0.js.map": "/static/js/main.d0ce17f0.js.map"
+    "main.b0a103b0.js.map": "/static/js/main.b0a103b0.js.map"
   },
   "entrypoints": [
     "static/css/main.2a255cbd.css",
-    "static/js/main.d0ce17f0.js"
+    "static/js/main.b0a103b0.js"
   ]
 }
