@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 		maxWidth: "9.375rem",
 		margin: "0 auto !important",
 		fontSize: "1.8rem !important",
-		color: "#fff",
+		color: "#fdd",
 		background: "tomato",
 		lineHeight: 1,
 		borderRadius: "1rem",

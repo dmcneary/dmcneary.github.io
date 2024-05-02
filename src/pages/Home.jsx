@@ -13,9 +13,10 @@ const useStyles = makeStyles((theme) => ({
 		height: "100vh",
 		display: "flex",
 		justifyContent: "center",
-		alignItems: "center",
+		alignItems: "stretch",
 		[theme.breakpoints.up('md')]: {
 			margin: "0 5vw 0 calc(15em + 5vw)",
+			alignItems: "center",
 		}
 	},
 	wave: {
@@ -35,11 +36,14 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "rgba(35,50,51,0.9)",
 		borderRadius: "1em",
 		padding: "1em",
-		height: "min-content",
+		margin: "10vh 0 5vh 0",
+		height: "auto",
 		width: "90vw",
+		display: "flex",
 		[theme.breakpoints.up('md')]: {
 			width: "75vw",
 			padding: "2em",
+			height: "min-content",
 		},
 	},
 	"@keyframes waveAnimation": {
@@ -70,8 +74,8 @@ const Home = () => {
 	const classes = useStyles();
 	return <Box component="main" className={classes.main}>
 		<Box className={classes.bioBox}>
-			<Grid container columns={6} spacing={4} justifyContent="center" alignItems="center">
-				<Grid item xs={6} md={2}>
+			<Grid container columns={6} spacing={4} justifyContent="center" alignContent="space-around" alignItems={{xs: "baseline", md:"center"}}>
+				<Grid item xs={6} md={2} alignSelf="start" flexGrow="1">
 					<Avatar
 						sx={{
 							margin: "0 auto",
@@ -83,8 +87,8 @@ const Home = () => {
 						alt="David McNeary"
 					/>
 				</Grid>
-				<Grid item xs={6} md={4} justifyContent="center" alignContent="space-between">
-					<Grid container columns={2} spacing={{xs: 2, md: 4}} justifyContent="center" alignItems="center">
+				<Grid item xs={6} md={4}>
+					<Grid container columns={2} spacing={{xs: 2, md: 4}} justifyContent="center" alignContent="center">
 						<Grid item xs={2} lg={1}>
 							<Typography sx={{ color: "tomato", fontSize: "clamp(14px, calc(3vw + 0.5em), 2em)"}} variant="h2">
 								<span className={classes.wave}>👋</span>&nbsp;Hi! My name is David and I am a <wbr />
@@ -96,7 +100,7 @@ const Home = () => {
 							</Typography>
 						</Grid>
 						<Grid item xs={2} lg={1}>
-							<Typography sx={{ color: "tan", fontSize: "1em" }} variant="body1">
+							<Typography sx={{ color: "tan", fontSize: "1em"}} variant="body1">
 								I enjoy working with a variety of technologies and have experience in a wide
 								range of programming languages. I am always looking for new and exciting projects
 								to work on! Please check out my <Link className="" to={"/portfolio"}>portfolio</Link> and <a className="" href="/David_McNeary_resume.pdf">resume</a>, and feel free to reach out

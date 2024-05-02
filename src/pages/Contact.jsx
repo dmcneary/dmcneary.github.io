@@ -67,7 +67,7 @@ const InputField = withStyles({
 })(TextField);
 
 const Contact = () => {
-	const [sendSuccessful, setSendSuccessful] = useState(false);
+	const [sendSuccessful, setSendSuccessful] = useState(null);
 	const [inputs, setInputs] = useState({
 		user_name: {
 			value: '',
@@ -91,11 +91,16 @@ const Contact = () => {
 	const templateId = process.env.REACT_APP_MAIL_TEMPLATE_ID;
 	const pubKey = process.env.REACT_APP_MAIL_PUBLIC_KEY;
 
+	const handleSuccessfulSendEmail = () => {
+		setSendSuccessful(true);
+		form.current.reset();
+	};
+
 	const sendEmail = (e) => {
 		e.preventDefault();
 		emailjs.sendForm(serviceId, templateId, form.current, pubKey)
 		.then(res => {
-			(res.status === 200) ? setSendSuccessful(true) : setSendSuccessful(false);
+			(res.status === 200) ? handleSuccessfulSendEmail() : setSendSuccessful(false);
 		});
 	};
 
@@ -203,7 +208,8 @@ const Contact = () => {
 						Contact Me
 					</Button>
 				</Box>
-				{sendSuccessful ? <Typography variant="h5" className={classes.heading}>Message sent!</Typography> : null}
+				{sendSuccessful === true && <Typography variant="h5" className={classes.heading}>Message sent!</Typography>}
+				{sendSuccessful === false && <Typography variant="h5" className={classes.heading}>Sorry, there was a problem sending your message.</Typography>}
 			</Box>
 		</Box>
 	)

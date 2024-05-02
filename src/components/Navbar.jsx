@@ -30,7 +30,7 @@ const Navbar = () => {
 						onClick={() => setMobileMenuOpen(prev => !prev)}
 						aria-label="open drawer"
 					>
-						<Menu sx={{color: "tomato"}}/>
+						<Menu sx={{color: "tomato", verticalAlign: "middle"}}/>
 					</IconButton>
 					<Typography sx={ {color: "tan", marginLeft: "1rem", fontSize: "calc(1em + 1vw)"} } variant="h1">
 						David McNeary
