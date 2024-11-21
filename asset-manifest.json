@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.1d81d1c8.css",
-    "main.js": "/static/js/main.5bad2655.js",
+    "main.css": "/static/css/main.6699da78.css",
+    "main.js": "/static/js/main.3fcb0eca.js",
+    "static/media/bg.jpg": "/static/media/bg.f0116ce3cccf26c261c2.jpg",
     "static/media/jakks.webp": "/static/media/jakks.d05ccdb1a8cea9f40cb6.webp",
     "static/media/archer.webp": "/static/media/archer.49afaa7ba24579e3e2ee.webp",
     "static/media/fit-monkeys.webp": "/static/media/fit-monkeys.979a6e5522b14499420c.webp",
@@ -10,11 +11,11 @@
     "static/media/tripleclick.webp": "/static/media/tripleclick.e548bf57bc1c54a66f86.webp",
     "static/media/bamazon.webp": "/static/media/bamazon.d93c9cfaa4cb1d3d0186.webp",
     "index.html": "/index.html",
-    "main.1d81d1c8.css.map": "/static/css/main.1d81d1c8.css.map",
-    "main.5bad2655.js.map": "/static/js/main.5bad2655.js.map"
+    "main.6699da78.css.map": "/static/css/main.6699da78.css.map",
+    "main.3fcb0eca.js.map": "/static/js/main.3fcb0eca.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d81d1c8.css",
-    "static/js/main.5bad2655.js"
+    "static/css/main.6699da78.css",
+    "static/js/main.3fcb0eca.js"
   ]
 }
