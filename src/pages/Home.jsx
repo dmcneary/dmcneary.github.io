@@ -10,14 +10,10 @@ import ProfPic from "../images/profilepicture.webp";
 
 const useStyles = makeStyles((theme) => ({
 	main: {
-		height: "100vh",
+		height: '90vh',
 		display: "flex",
 		justifyContent: "center",
-		alignItems: "stretch",
-		[theme.breakpoints.up('md')]: {
-			margin: "0 5vw 0 calc(15em + 5vw)",
-			alignItems: "center",
-		}
+		alignItems: "center"
 	},
 	wave: {
 		animationName: "$waveAnimation",
@@ -36,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "rgba(35,50,51,0.9)",
 		borderRadius: "1em",
 		padding: "1em",
-		margin: "10vh 0 5vh 0",
+		margin: "0",
 		height: "auto",
 		width: "90vw",
 		display: "flex",
@@ -84,12 +80,13 @@ const Home = () => {
 							maxWidth: "45vw",
 						}}
 						src={ProfPic}
+						imgProps={{loading: "eager"}}
 						alt="David McNeary"
 					/>
 				</Grid>
 				<Grid item xs={6} md={4}>
 					<Grid container columns={2} spacing={{xs: 2, md: 4}} justifyContent="center" alignContent="center">
-						<Grid item xs={2} lg={1}>
+						<Grid item xs={2} lg={1} sx={{height: "100%"}}>
 							<Typography sx={{ color: "tomato", fontSize: "clamp(14px, calc(3vw + 0.5em), 2em)"}} variant="h2">
 								<span className={classes.wave}>👋</span>&nbsp;Hi! My name is David and I am a <wbr />
 								<span className={classes.typed}>

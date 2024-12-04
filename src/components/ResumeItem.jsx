@@ -7,10 +7,10 @@ const useStyles = makeStyles((theme) => ({
 	timeLineItem: {
     padding: "1rem",
 		backgroundColor: "#333",
-		opacity: 0.9,
 		borderRadius: "15px",
 		border: "10px solid tomato",
     position: "relative",
+		opacity: "0.9",
     margin: "1rem 0",
     clear: "both",
 		"& ul": {

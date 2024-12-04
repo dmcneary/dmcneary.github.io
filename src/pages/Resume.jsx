@@ -7,24 +7,28 @@ import jobsByYear from "../data/jobs";
 
 const useStyles = makeStyles((theme) => ({
 	main: {
-		height: "100vh",
-		margin: "0",
+		margin: "1rem auto",
 		[theme.breakpoints.up('md')]: {
-			margin: "0 5% 0 25%",
-		}
+			margin: "2rem auto",
+		},
+		display: "flex",
+		flexFlow: "column nowrap",
+		justifyContent: "center",
+		alignItems: "center"
 	},
 	headerContainer: {
-		marginTop: "10vh",
 		marginRight: "auto",
 		marginLeft: "auto",
 		overflow: "auto",
 		textAlign: "left",
-		backgroundColor: "rgba(35,50,51,0.9)",
+		backgroundColor: "rgb(35,50,51)",
+		opacity: "0.9",
 		borderRadius: "1em",
 		padding: "1em",
 		height: "min-content",
-		width: "90%",
+		width: "90vw",
 		[theme.breakpoints.up('md')]: {
+			width: "75vw",
 			padding: "2em",
 		},
 	},
@@ -55,9 +59,11 @@ const useStyles = makeStyles((theme) => ({
 		maxWidth: "9.375rem",
 		margin: "0 auto !important",
 		fontSize: "1.8rem !important",
-		color: "#fdd",
+		color: "rgb(35,50,51)",
 		background: "tomato",
+		opacity: "0.9",
 		lineHeight: 1,
+		border: "2px solid rgb(35,50,51)",
 		borderRadius: "1rem",
 		padding: "0.5rem 1rem",
 		position: "relative",
@@ -75,13 +81,10 @@ const useStyles = makeStyles((theme) => ({
 			},
 		},
 	},
-	timeLineItem: {
-		border: "10px solid tomato",
-	},
 	heading: {
 		color: "tomato",
 		padding: "1rem 0"
-	},
+	}
 }));
 
 const Resume = () => {
@@ -102,7 +105,7 @@ const Resume = () => {
 						<Typography variant="h2" className={`${classes.timeLineYear}`}>
 							{el.year}
 						</Typography>
-						{el.roles.map(role => <ResumeItem key={`${role.company}-${role.area}`}className={`${classes.timeLineItem}`} data={role} />)}
+						{el.roles.map(role => <ResumeItem key={`${role.company}-${role.area}`} data={role} />)}
 					</React.Fragment>
 				))}
 

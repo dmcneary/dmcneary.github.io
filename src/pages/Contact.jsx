@@ -11,9 +11,9 @@ import Send from "@mui/icons-material/Send";
 
 const useStyles = makeStyles((theme) => ({
 	mainContainer: {
-		height: "100vh",
+		height: "90vh",
 		[theme.breakpoints.up('md')]: {
-			margin: "0 5vw 0 calc(15em + 5vw)",
+			margin: "0 auto",
 		},
 		display: "flex",
 		justifyContent: "center",
