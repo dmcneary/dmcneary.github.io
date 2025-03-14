@@ -1,0 +1,56 @@
+.appBar{
+		background: "#222";
+		padding: "1rem";
+		box-shadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)";
+		border-bottom: "1px solid #333";
+		opacity: 0.9;
+		height: "10vh";
+		min-height: "75px";
+	}
+
+	.toolbar{
+		justify-content: "space-between"
+	}
+
+	.mobileMenuButton{
+		display: block;
+
+		@media screen and (min-width: 600px) {
+			display: none;
+		}
+	}
+	
+	.mobileMenuButtonIcon {
+		color: "tomato";
+		vertical-align: "middle";
+	}
+
+	.mobileMenuDrawer {
+		width: "fit-content";
+		display: block;
+
+		@media screen and (min-width: 600px) {
+			display: none;
+		}
+
+		.MuiDrawer-paper {
+			border: "0";
+			width: "min-content";
+			box-sizing: 'border-box';
+		}		
+	}
+
+	.header {
+		margin-left: "1rem",
+	}
+
+	.navItems{
+		display: 'none';
+		flex-flow: "row nowrap";
+
+		@media screen and (min-width: 600px) {
+			display: flex;
+		}
+	}
+	
+	

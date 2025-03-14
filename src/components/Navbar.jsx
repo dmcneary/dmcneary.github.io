@@ -1,17 +1,13 @@
 import React, { useState } from "react";
-
 import { Link } from "react-router-dom";
-
 import {
 	AppBar,
 	Box,
-	Button,
 	Drawer,
 	IconButton,
 	Toolbar,
 	Typography,
 } from "@mui/material";
-
 import {
 	AssignmentInd,
 	Home,
@@ -19,56 +15,15 @@ import {
 	ContactMail,
 	Menu
 } from "@mui/icons-material";
-
+import Button from "./Button";
 import DrawerMenu from "./DrawerMenu";
 import Footer from "./Footer";
 
-const styles = {
-	appBar: {
-		background: "#222",
-		padding: "1rem",
-	},
-	toolbar: {
-		justifyContent: "space-between"
-	},
-	mobileMenuButton: {
-		display: { xs: "block", md: "none" }
-	},
-	mobileMenuButtonIcon: {
-		color: "tomato",
-		verticalAlign: "middle"
-	},
-	mobileMenuDrawer: {
-		display: { xs: "block", md: "none" },
-		width: "fit-content",
-		'& .MuiDrawer-paper': { border: "0", width: "min-content", boxSizing: 'border-box' }
-	},
-	header: {
-		color: "tan",
-		marginLeft: "1rem",
-		fontSize: "calc(1em + 1vw)"
-	},
-	navItems: {
-		display: { xs: 'none', md: 'flex' },
-		flexFlow: "row nowrap"
-	},
-	navItemButton: {
-		marginRight: "1rem",
-		color: 'tomato',
-		display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
-		'&:hover': {
-			color: 'tan'
-		}
-	},
-};
-
 const navItems = [
-	{ listIcon: <Home sx={{ marginRight: "0.5rem" }} />, listText: "Home", listPath: "/" },
-	{ listIcon: <AssignmentInd sx={{ marginRight: "0.5rem" }} />, listText: "Resume", listPath: "/resume" },
-	{ listIcon: <Apps sx={{ marginRight: "0.5rem" }} />, listText: "Portfolio", listPath: "/portfolio" },
-	{ listIcon: <ContactMail sx={{ marginRight: "0.5rem" }} />, listText: "Contact", listPath: "/contact" },
+	{ listIcon: <Home />, listText: "Home", listPath: "/" },
+	{ listIcon: <AssignmentInd />, listText: "Resume", listPath: "/resume" },
+	{ listIcon: <Apps />, listText: "Portfolio", listPath: "/portfolio" },
+	{ listIcon: <ContactMail />, listText: "Contact", listPath: "/contact" },
 ];
 
 const Navbar = () => {
@@ -79,47 +34,80 @@ const Navbar = () => {
 		<>
 			<AppBar
 				component="nav"
-				sx={styles.appBar}
 				position="sticky"
+				sx={{
+					backgroundColor: "secondary.main",
+					padding: "1rem",
+				}}
 			>
-				<Toolbar sx={styles.toolbar}>
-					<Link to="/">
-						<Typography sx={styles.header} variant="h1">
-							David McNeary
+				<Toolbar sx={{ justifyContent: "space-between" }}>
+					<Link to="/" style={{ textDecoration: 'none' }}>
+						<Typography 
+							variant="h1" 
+							sx={{ 
+								marginLeft: "1rem",
+								color: "text.primary",
+							}}
+						>
+							David McNeary <br />
 						</Typography>
 					</Link>
-					<Box sx={styles.navItems}>
+					
+					<Box sx={{ 
+						display: { xs: 'none', md: 'flex' },
+						flexFlow: "row nowrap"
+					}}>
 						{navItems.map(({ listIcon, listText, listPath }) => (
-							<Link to={listPath} key={listText}>
+							<Link 
+								to={listPath} 
+								key={listText}
+								style={{ textDecoration: 'none' }}
+							>
 								<Button
-									sx={styles.navItemButton}>
-									{listIcon}
+									variant="text"
+									startIcon={listIcon}
+									sx={{ marginRight: "1rem" }}
+								>
 									{listText}
 								</Button>
 							</Link>
 						))}
 					</Box>
+
 					<IconButton
-						sx={styles.mobileMenuButton}
 						onClick={() => setMobileMenuOpen(prev => !prev)}
 						aria-label="open mobile menu drawer"
+						sx={{
+							display: { xs: "block", md: "none" },
+							"& .MuiSvgIcon-root": {
+								color: "secondary.main",
+								verticalAlign: "middle"
+							}
+						}}
 					>
-						<Menu sx={styles.mobileMenuButtonIcon} />
+						<Menu />
 					</IconButton>
 				</Toolbar>
 			</AppBar>
-			<nav>
-				<Drawer
-					variant="temporary"
-					sx={styles.mobileMenuDrawer}
-					open={mobileMenuOpen}
-					anchor="left"
-					onClose={handleCloseMenu}
-				>
-					<DrawerMenu closeMenu={handleCloseMenu} menuItems={navItems} />
-					<Footer />
-				</Drawer>
-			</nav>
+
+			<Drawer
+				variant="temporary"
+				open={mobileMenuOpen}
+				anchor="left"
+				onClose={handleCloseMenu}
+				sx={{
+					display: { xs: "block", md: "none" },
+					width: "fit-content",
+					"& .MuiDrawer-paper": { 
+						border: "0", 
+						width: "min-content", 
+						boxSizing: 'border-box' 
+					}
+				}}
+			>
+				<DrawerMenu closeMenu={handleCloseMenu} menuItems={navItems} />
+				<Footer />
+			</Drawer>
 		</>
 	);
 };
