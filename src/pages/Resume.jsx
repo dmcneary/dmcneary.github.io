@@ -2,46 +2,37 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
-import PageTransition from "../components/PageTransition";
 import ResumeItem from "../components/ResumeItem";
 import jobsByYear from "../data/jobs";
 
 const Resume = () => {
 	const theme = useTheme();
-	return (
-		<PageTransition>
-			<Box component="main" sx={theme.mixins.mainContainer}>
-				<Box component="header" sx={theme.mixins.contentBox}>
-					<Typography variant="h2" gutterBottom>
-						My Resume
+	return (<React.Fragment>
+				
+					<Typography variant="h2" alignSelf="flex-start" gutterBottom>
+						Resume
 					</Typography>
-					<Typography variant="body2" sx={{ md: { maxWidth: "50%" } }}>
-						* Please note, I have omitted some prior experience from this resume. Feel free to contact me if you want to talk about the bicycle industry!
-					</Typography>
-				</Box>
-				<Box component="main" sx={{
-					position: "relative",
-					padding: "1rem",
-					margin: "0 auto",
+				
+				<Box sx={{
+					...theme.mixins.contentBox,
 					[theme.breakpoints.up("md")]: {
-						padding: "2rem",
+						padding: "0 2em",
 						"&:before": {
 							content: "''",
 							position: "absolute",
 							height: "100%",
-							border: `1px solid ${theme.palette.primary.main}`,
+							border: `1px solid ${theme.palette.text.primary}`,
 							right: "50vw",
-							top: 0,
 							left: "calc(50% - 1px)",
+							boxSizing: "border-box",
 						},
-					},
-				}}>
+					}}}>
 					{jobsByYear.map(el => (
 						<React.Fragment key={el.year}>
 							<Typography variant="h2" sx={{
 								textAlign: "center",
 								maxWidth: "9.375rem",
-								margin: "0 auto",
+								margin: "2rem auto",
 								color: theme.palette.text.primary,
 								background: theme.palette.secondary.main,
 								lineHeight: 1,
@@ -68,8 +59,7 @@ const Resume = () => {
 						</React.Fragment>
 					))}
 				</Box>
-			</Box>
-		</PageTransition>
+	</React.Fragment>
 	);
 };
 

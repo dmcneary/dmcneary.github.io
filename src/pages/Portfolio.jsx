@@ -6,7 +6,6 @@ import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkIcon from '@mui/icons-material/Link';
-import PageTransition from "../components/PageTransition";
 import Button from "../components/Button";
 import jakksImg from "../images/jakks.webp";
 import archerImg from "../images/archer.webp";
@@ -61,14 +60,10 @@ const portfolioItems = [
 
 const Portfolio = () => {
 	const theme = useTheme();
-	return (
-		<PageTransition>
-			<Box component="main" sx={theme.mixins.mainContainer}>
-				<Box component="header" sx={{ ...theme.mixins.contentBox, marginBottom: "2rem" }}>
-					<Typography variant="h2">
+	return (<>
+				<Typography variant="h2" alignSelf="flex-start" gutterBottom>
 						Portfolio
 					</Typography>
-				</Box>
 
 				<Grid container columns={12} spacing={8}>
 					{portfolioItems.map((item) => (
@@ -154,8 +149,7 @@ const Portfolio = () => {
 						</Grid>
 					))}
 				</Grid>
-			</Box>
-		</PageTransition>
+				</>
 	);
 };
 
