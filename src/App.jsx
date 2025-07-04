@@ -7,7 +7,6 @@ import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
-import PageTransition from "./components/PageTransition";
 
 import './styles/index.css';
 
@@ -127,27 +126,27 @@ const theme = createTheme({
 	},
 	mixins: {
 		mainContainer: {
-			background: "none",
-			margin: '0 auto',
-			/*height: 'calc(100vh - 96px)',*/
+			margin: '1rem auto',
 			display: 'flex',
 			flexFlow: 'column nowrap',
 			justifyContent: 'center',
 			alignItems: 'center',
 			width: '90vw',
-			maxWidth: '1200px',
-			'@media (max-width: 900px)': {
-				width: '80vw',
-				maxWidth: '640px'
+			'@media (min-width: 900px)': {
+				maxWidth: '75vw',
+				margin: '2rem auto',
 			},
 		},
 		contentBox: {
-			backgroundColor: "#333333",
+			overflow: 'auto',
+			backgroundColor: 'primary.main',
 			borderRadius: '1em',
-			height: "100%",
+			padding: '1em',
+			height: 'min-content',
 			width: '90vw',
 			'@media (min-width: 900px)': {
 				width: '75vw',
+				padding: '2em',
 			},
 		},
 	},
@@ -161,10 +160,10 @@ const App = () => {
 		<Navbar />
 		<AnimatePresence mode="wait">
 			<Routes location={location}>
-				<Route path="/" element={<PageTransition key={location.pathname}><Home /></PageTransition>} />
-				<Route path="/resume" element={<PageTransition key={location.pathname}><Resume /></PageTransition>} />
-				<Route path="/portfolio" element={<PageTransition key={location.pathname}><Portfolio /></PageTransition>} />
-				<Route path="/contact" element={<PageTransition key={location.pathname}><Contact /></PageTransition>} />
+				<Route path="/" element={<Home />} />
+				<Route path="/resume" element={<Resume />} />
+				<Route path="/portfolio" element={<Portfolio />} />
+				<Route path="/contact" element={<Contact />} />
 			</Routes>
 		</AnimatePresence>
 	</ThemeProvider>

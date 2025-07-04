@@ -80,7 +80,7 @@ const Navbar = () => {
 						sx={{
 							display: { xs: "block", md: "none" },
 							"& .MuiSvgIcon-root": {
-								color: "text.primary",
+								color: "secondary.main",
 								verticalAlign: "middle"
 							}
 						}}

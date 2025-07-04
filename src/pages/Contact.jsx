@@ -5,6 +5,7 @@ import {
 	Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import PageTransition from "../components/PageTransition";
 import emailjs from '@emailjs/browser';
 import Send from "@mui/icons-material/Send";
 import Button from "../components/Button";
@@ -80,9 +81,19 @@ const Contact = () => {
 	}
 
 	return (
+		<PageTransition>
+			<Box component="main" sx={{
+				height: "90vh",
+				[theme.breakpoints.up('md')]: {
+					margin: "0 auto",
+				},
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center"
+			}}>
 				<Box sx={theme.mixins.contentBox}>
 					<Box component="form" ref={form}>
-						<Typography variant="h2" alignSelf="flex-start" gutterBottom>
+						<Typography variant="h2" sx={{ textAlign: "center", marginBottom: "1rem" }}>
 							Let's build together!
 						</Typography>
 						<TextField
@@ -137,6 +148,8 @@ const Contact = () => {
 					{sendSuccessful === true && <Typography variant="h4" sx={{ textAlign: "center", marginTop: "1rem" }}>Message sent!</Typography>}
 					{sendSuccessful === false && <Typography variant="h4" sx={{ textAlign: "center", marginTop: "1rem" }}>Sorry, there was a problem sending your message.</Typography>}
 				</Box>
+			</Box>
+		</PageTransition>
 	)
 };
 
