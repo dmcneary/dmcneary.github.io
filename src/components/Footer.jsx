@@ -1,18 +1,19 @@
 import React from "react";
-import { IconButton, Tooltip } from "@mui/material";
+import { IconButton, Tooltip, Box } from "@mui/material";
 import { GitHub, LinkedIn, FileDownload } from "@mui/icons-material";
 
 const iconButtonStyle = {
+	color: "text.accent",
   "& .MuiSvgIcon-root": {
-    fill: "tan",
+    fill: "text.accent",
     "&:hover": {
-      fill: "tomato",
+      fill: "text.primary",
     },
   },
 };
 
 const Footer = () => (
-  <div style={{ background: "#222", display: "flex", justifyContent: "center", padding: "0.8rem" }}>
+  <Box sx={{ backgroundColor: "primary.main",}} style={{ display: "flex", justifyContent: "center", padding: "0.8rem" }}>
     <Tooltip title="GitHub">
       <IconButton
         href="https://www.github.com/dmcneary"
@@ -41,7 +42,7 @@ const Footer = () => (
         <FileDownload />
       </IconButton>
     </Tooltip>
-  </div>
+  </Box>
 );
 
 export default Footer;

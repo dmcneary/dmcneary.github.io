@@ -10,7 +10,7 @@ const DrawerMenu = ({ closeMenu, menuItems }) => (
 		component="nav"
 		sx={
 			{
-				background: "#511",
+				backgroundColor: "secondary.main",
 				height: "100%",
 				padding: "0 1em"
 			}
@@ -37,7 +37,7 @@ const DrawerMenu = ({ closeMenu, menuItems }) => (
 							<ListItemIcon
 								sx={
 									{
-										color: "tan",
+										color: "text.accent",
 										display: 'flex',
 										justifyContent: 'flex-start',
 										alignItems: 'center'
@@ -47,11 +47,16 @@ const DrawerMenu = ({ closeMenu, menuItems }) => (
 								{item.listIcon}
 							</ListItemIcon>
 						</Link>
-						<Link to={item.listPath}>
+						<Link to={item.listPath}
+							sx={{
+								color: "text.primary"
+							}}
+						>
 							<ListItemText
 								primary={item.listText}
 								sx={
 									{
+										color: "text.primary",
 										"&:hover": {
 											color: "white",
 											textDecoration: "none",

@@ -115,14 +115,6 @@ const theme = createTheme({
 				},
 			},
 		},
-		MuiPaper: {
-			styleOverrides: {
-				root: {
-					backgroundColor: '#333333',
-					color: '#DCD7C9', // slate
-				},
-			},
-		},
 	},
 	mixins: {
 		mainContainer: {
